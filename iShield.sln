@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iShield", "iShield\iShield.csproj", "{C33DC0A1-5CD3-4F14-BEE0-6ED77E00895B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C33DC0A1-5CD3-4F14-BEE0-6ED77E00895B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C33DC0A1-5CD3-4F14-BEE0-6ED77E00895B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C33DC0A1-5CD3-4F14-BEE0-6ED77E00895B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C33DC0A1-5CD3-4F14-BEE0-6ED77E00895B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2B48BFED-5D60-4ABB-984A-660984716065}
+	EndGlobalSection
+EndGlobal
