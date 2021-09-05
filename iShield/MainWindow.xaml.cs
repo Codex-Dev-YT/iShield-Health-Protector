@@ -24,5 +24,11 @@ namespace iShield
         {
             InitializeComponent();
         }
+
+        private void Titlebar_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
+        }
     }
 }
