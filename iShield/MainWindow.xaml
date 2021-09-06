@@ -108,8 +108,9 @@
                 <StackPanel x:Name="pnlReminders" Visibility="Hidden" Background="#FF22272B" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock Text="Reminders" Foreground="Bisque" FontSize="50" Margin="0,-30,0,0"/>
                 </StackPanel>
-                <StackPanel x:Name="pnlPresentation" Visibility="Hidden" Background="#FF22272B" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock Text="Presentation" Foreground="Bisque" FontSize="50" Margin="0,-30,0,0"/>
+                <StackPanel x:Name="pnlPresentation" Background="#FF22272B">
+                    <local:ContentSlider x:Name="Presentation"
+                                         FinishedSliding="ContentSlider_FinishedSliding"/>
                 </StackPanel>
                 <StackPanel x:Name="pnlAbout"  Background="#FF22272B" Visibility="Hidden">
                     <StackPanel Margin="20">

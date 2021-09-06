@@ -54,6 +54,9 @@ namespace iShield
             if (currentPage != null)
                 contentPages[currentPage].Visibility = Visibility.Hidden;
 
+            if (currentPage == btnPresentation)
+                Presentation.Reset();
+
             currentPage = (RadioButton)sender;
             contentPages[currentPage].Visibility = Visibility.Visible;
         }
@@ -72,6 +75,11 @@ namespace iShield
             finishedInitialization = true;
             LoadAppropriateStartPage();
             DwmDropShadow.DropShadowToWindow(this);
+        }
+
+        private void ContentSlider_FinishedSliding(object sender, EventArgs e)
+        {
+            btnSettings.IsChecked = true;
         }
     }
 }
