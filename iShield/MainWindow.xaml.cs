@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using iShield.Utilities;
 
 namespace iShield
 {
@@ -70,6 +71,7 @@ namespace iShield
             RegisterPages();
             finishedInitialization = true;
             LoadAppropriateStartPage();
+            DwmDropShadow.DropShadowToWindow(this);
         }
     }
 }

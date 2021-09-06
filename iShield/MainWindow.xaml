@@ -10,7 +10,7 @@
         WindowStyle="None"
         ResizeMode="NoResize"
         Background="#22272b"
-        AllowsTransparency="True"
+        AllowsTransparency="False"
         WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Window.Resources>
         <!-- Flat Button Style -->
