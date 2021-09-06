@@ -129,5 +129,8 @@
   <ItemGroup>
     <Resource Include="iShield Icon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Code Dev Logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

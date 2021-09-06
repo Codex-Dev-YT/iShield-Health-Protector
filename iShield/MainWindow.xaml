@@ -111,8 +111,58 @@
                 <StackPanel x:Name="pnlPresentation" Visibility="Hidden" Background="#FF22272B" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock Text="Presentation" Foreground="Bisque" FontSize="50" Margin="0,-30,0,0"/>
                 </StackPanel>
-                <StackPanel x:Name="pnlAbout" Visibility="Hidden"  Background="#FF22272B" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock Text="About" Foreground="Bisque" FontSize="50" Margin="0,-30,0,0"/>
+                <StackPanel x:Name="pnlAbout"  Background="#FF22272B" Visibility="Hidden">
+                    <StackPanel Margin="20">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Orientation="Horizontal" 
+                                    VerticalAlignment="Center"
+                                    Grid.Column="0">
+                                <Image Source="/Assets/Icons/iShield Icon.ico"
+                                       RenderOptions.BitmapScalingMode="Fant"
+                                       Height="50" Width="50" />
+                                <TextBlock Text="iShield" 
+                                           Foreground="#FFD9E5F0" 
+                                           FontSize="36" 
+                                           FontWeight="Medium"
+                                           Margin="20,0,0,0"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal"
+                                        HorizontalAlignment="Right"
+                                        Grid.Column="1">
+                                <Image Source="/Assets/Code Dev Logo.png" 
+                                       RenderOptions.BitmapScalingMode="Fant"
+                                       Width="50" Height="50"
+                                       Cursor="Hand"
+                                       ToolTip="Codex Dev"/>
+                            </StackPanel>
+                        </Grid>
+                        
+                    </StackPanel>
+                    <GridSplitter Margin="20,0,20,10" Height="1" Width="700" Background="#FF5E6A74"/>
+                    <TextBlock Text="A tool to save your health while using your computer."
+                               Margin="20,0,20,10"
+                               Foreground="#FF96A5B2"
+                               FontSize="14"/>
+                    <TextBlock Text="Version:           1.0.0"
+                               Margin="20,0,20,5"
+                               Foreground="#FF96A5B2"
+                               FontSize="14"/>
+                    <TextBlock Text="Made by:         Codex Dev"
+                               Margin="20,0,20,5"
+                               Foreground="#FF96A5B2"
+                               FontSize="14"/>
+                    <TextBlock Text="YT Channel:      https://youtube.com/channel/UCYAuOkMwqHZMbinEC-OQb3w"
+                               Margin="20,0,20,5"
+                               Foreground="#FF96A5B2"
+                               FontSize="14"/>
+                    <TextBlock Text="Source Code:    https://github.com/Codex-Dev-YT/iShield"
+                               Margin="20,0,20,5"
+                               Foreground="#FF96A5B2"
+                               FontSize="14"/>
                 </StackPanel>
             </Grid>
         </StackPanel>
