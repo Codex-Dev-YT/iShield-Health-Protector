@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:iShield"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary Source="/MainResourceDictionary.xaml"/>
     </Application.Resources>
 </Application>

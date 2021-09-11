@@ -13,6 +13,7 @@
         AllowsTransparency="False"
         WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Window.Resources>
+
         <!-- Flat Button Style -->
 
         <SolidColorBrush x:Key="DefaultBrush" Color="Transparent" />
@@ -108,7 +109,7 @@
                 <StackPanel x:Name="pnlReminders" Visibility="Hidden" Background="#FF22272B" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock Text="Reminders" Foreground="Bisque" FontSize="50" Margin="0,-30,0,0"/>
                 </StackPanel>
-                <StackPanel x:Name="pnlPresentation" Background="#FF22272B">
+                <StackPanel x:Name="pnlPresentation" Background="#FF22272B" Visibility="Hidden">
                     <local:ContentSlider x:Name="Presentation"
                                          FinishedSliding="ContentSlider_FinishedSliding"/>
                 </StackPanel>
@@ -121,11 +122,11 @@
                             </Grid.ColumnDefinitions>
                             <StackPanel Orientation="Horizontal" 
                                     VerticalAlignment="Center"
-                                    Grid.Column="0">
+                                    Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,146,-0.002">
                                 <Image Source="/Assets/Icons/iShield Icon.ico"
                                        RenderOptions.BitmapScalingMode="Fant"
                                        Height="50" Width="50" />
-                                <TextBlock Text="iShield" 
+                                <TextBlock Text="iShield Health Protector" 
                                            Foreground="#FFD9E5F0" 
                                            FontSize="36" 
                                            FontWeight="Medium"
@@ -134,36 +135,111 @@
                             <StackPanel Orientation="Horizontal"
                                         HorizontalAlignment="Right"
                                         Grid.Column="1">
-                                <Image Source="/Assets/Code Dev Logo.png" 
-                                       RenderOptions.BitmapScalingMode="Fant"
-                                       Width="50" Height="50"
-                                       Cursor="Hand"
-                                       ToolTip="Codex Dev"/>
+                                <TextBlock>
+                                    <Hyperlink NavigateUri="https://youtube.com/channel/UCYAuOkMwqHZMbinEC-OQb3w"
+                                               RequestNavigate="Hyperlink_RequestNavigate"
+                                               TextDecorations="None">
+                                        <Image Source="/Assets/Code Dev Logo.png" 
+                                                                   RenderOptions.BitmapScalingMode="Fant"
+                                                                   Width="50" Height="50"
+                                                                   ToolTip="Codex Dev"/>
+                                    </Hyperlink>
+                                </TextBlock>
+                                
                             </StackPanel>
                         </Grid>
                         
                     </StackPanel>
                     <GridSplitter Margin="20,0,20,10" Height="1" Width="700" Background="#FF5E6A74"/>
-                    <TextBlock Text="A tool to save your health while using your computer."
+                    <TextBlock Text="A tool to protect your health while using your computer."
                                Margin="20,0,20,10"
                                Foreground="#FF96A5B2"
                                FontSize="14"/>
-                    <TextBlock Text="Version:           1.0.0"
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="125"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <!-- Version -->
+                        <TextBlock Text="Version:"
                                Margin="20,0,20,5"
                                Foreground="#FF96A5B2"
-                               FontSize="14"/>
-                    <TextBlock Text="Made by:         Codex Dev"
+                               FontSize="14"
+                               Grid.Column="0" Grid.Row="0"/>
+                        <TextBlock Text="1.0.0"
                                Margin="20,0,20,5"
                                Foreground="#FF96A5B2"
-                               FontSize="14"/>
-                    <TextBlock Text="YT Channel:      https://youtube.com/channel/UCYAuOkMwqHZMbinEC-OQb3w"
+                               FontSize="14"
+                               Grid.Column="1" Grid.Row="0"/>
+
+                        <!-- Credit -->
+                        <TextBlock Text="Made by:"
                                Margin="20,0,20,5"
                                Foreground="#FF96A5B2"
-                               FontSize="14"/>
-                    <TextBlock Text="Source Code:    https://github.com/Codex-Dev-YT/iShield"
+                               FontSize="14"
+                               Grid.Column="0" Grid.Row="1"/>
+                        <TextBlock Margin="20,0,20,5"
+                               Foreground="#FF96A5B2"
+                               FontSize="14"
+                               Grid.Column="1" Grid.Row="1">
+                            <Hyperlink NavigateUri="https://github.com/Codex-Dev-YT" RequestNavigate="Hyperlink_RequestNavigate">
+                                Codex Dev
+                            </Hyperlink>
+                        </TextBlock>
+
+                        <!-- YT Channel -->
+                        <TextBlock Text="YT Channel:"
                                Margin="20,0,20,5"
                                Foreground="#FF96A5B2"
-                               FontSize="14"/>
+                               FontSize="14"
+                               Grid.Column="0" Grid.Row="2"/>
+                        <TextBlock Margin="20,0,20,5"
+                               Foreground="#FF96A5B2"
+                               FontSize="14"
+                               Grid.Column="1" Grid.Row="2">
+                            <Hyperlink NavigateUri="https://youtube.com/channel/UCYAuOkMwqHZMbinEC-OQb3w" RequestNavigate="Hyperlink_RequestNavigate">
+                                https://youtube.com/channel/UCYAuOkMwqHZMbinEC-OQb3w
+                            </Hyperlink>
+                        </TextBlock>
+
+                        <!-- Source Code -->
+                        <TextBlock Text="Source Code:"
+                               Margin="20,0,20,5"
+                               Foreground="#FF96A5B2"
+                               FontSize="14"
+                               Grid.Column="0" Grid.Row="3"/>
+                        <TextBlock Margin="20,0,20,5"
+                               Foreground="#FF96A5B2"
+                               FontSize="14"
+                               Grid.Column="1" Grid.Row="3">
+                            <Hyperlink NavigateUri="https://github.com/Codex-Dev-YT/iShield" RequestNavigate="Hyperlink_RequestNavigate">
+                                https://github.com/Codex-Dev-YT/iShield
+                            </Hyperlink>
+                        </TextBlock>
+
+                        <!-- Flaticon credit -->
+                        <TextBlock Text="Icons from:"
+                               Margin="20,0,20,5"
+                               Foreground="#FF96A5B2"
+                               FontSize="14"
+                               Grid.Column="0" Grid.Row="4"/>
+                        <TextBlock Margin="20,0,20,5"
+                               Foreground="#FF96A5B2"
+                               FontSize="14"
+                               Grid.Column="1" Grid.Row="4">
+                            <Hyperlink NavigateUri="https://www.flaticon.com" RequestNavigate="Hyperlink_RequestNavigate">
+                                https://www.flaticon.com/
+                            </Hyperlink>
+                        </TextBlock>
+                    </Grid>
                 </StackPanel>
             </Grid>
         </StackPanel>

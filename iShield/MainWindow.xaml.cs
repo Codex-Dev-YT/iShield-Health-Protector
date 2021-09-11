@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,11 @@ namespace iShield
         public MainWindow()
         {
             InitializeComponent();
+            //// Apply the custom font to the entire window:
+            //FrameworkElement.StyleProperty.OverrideMetadata(typeof(Window), new FrameworkPropertyMetadata
+            //{
+            //    DefaultValue = FindResource(typeof(Window))
+            //});
         }
 
         private void RegisterPages()
@@ -80,6 +86,12 @@ namespace iShield
         private void ContentSlider_FinishedSliding(object sender, EventArgs e)
         {
             btnSettings.IsChecked = true;
+        }
+
+        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
+            e.Handled = true;
         }
     }
 }
