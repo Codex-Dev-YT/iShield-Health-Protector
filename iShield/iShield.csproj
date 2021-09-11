@@ -164,7 +164,9 @@
     <Resource Include="Assets\Presentation\snowflake.png" />
     <Resource Include="Assets\Icons\Why iShield.png" />
     <Resource Include="Assets\Icons\information.png" />
-    <Content Include="Assets\Icons\reminders.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Icons\reminders.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
