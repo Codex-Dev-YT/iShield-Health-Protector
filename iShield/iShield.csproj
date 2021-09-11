@@ -112,6 +112,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Resource Include="Assets\Fonts\Noto Serif TC.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -138,6 +139,32 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Code Dev Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Presentation\sun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Presentation\brightness2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Presentation\sun-glasses2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Presentation\sandclock2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Presentation\blink.png" />
+    <Resource Include="Assets\Presentation\water-bottle.png" />
+    <Resource Include="Assets\Presentation\break-time.png" />
+    <Resource Include="Assets\Presentation\brightness.png" />
+    <Resource Include="Assets\Presentation\sandclock.png" />
+    <Resource Include="Assets\Presentation\sun-glasses.png" />
+    <Resource Include="Assets\Presentation\vision.png" />
+    <Resource Include="Assets\Presentation\computer.png" />
+    <Resource Include="Assets\Presentation\snowflake.png" />
+    <Resource Include="Assets\Icons\Why iShield.png" />
+    <Resource Include="Assets\Icons\information.png" />
+    <Content Include="Assets\Icons\reminders.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

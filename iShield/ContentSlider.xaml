@@ -7,6 +7,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="420" d:DesignWidth="800" Loaded="UserControl_Loaded">
     <UserControl.Resources>
+
+        <FontFamily x:Key="NotoSerifTC" >/Assets/Fonts/#Noto Serif TC</FontFamily>
+        <SolidColorBrush x:Key="BackgroundBrush" Color="#26FC5453" />
+
         <!-- Flat Button Style -->
 
         <SolidColorBrush x:Key="DefaultBrush" Color="#FFFC5453" />
@@ -48,24 +52,920 @@
     </UserControl.Resources>
     <Grid Background="Transparent" Height="420">
         <StackPanel x:Name="Slide1"
-                    Background="#FF22272B"
-                    Visibility="Hidden">
-            <StackPanel Margin="20">
-                <TextBlock Text="Slide #1" FontSize="40" Foreground="Plum"/>
+                    Background="#FF22272B" Visibility="Hidden">
+            <StackPanel Margin="20,0">
+                <TextBlock Text="3 Problems!" 
+                           FontSize="40"
+                           FontWeight="Bold"
+                           Foreground="{StaticResource DefaultBrush}"
+                           HorizontalAlignment="Center" FontFamily="{DynamicResource NotoSerifTC}"/>
+                <TextBlock Text="Today's modern screens have 3 major risks to your eyes:"
+                           Foreground="#FF4C565F"
+                           FontSize="14"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center" 
+                           FontFamily="{DynamicResource NotoSerifTC}"
+                           Margin="0,5,0,10"/>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            Margin="0,20,0,0">
+                    <Border Height="100" Width="100" 
+                            BorderBrush="{DynamicResource DefaultBrush}" 
+                            BorderThickness="5"
+                            CornerRadius="10"
+                            Margin="20,0">
+                        <Image Source="/Assets/Presentation/computer.png"
+                               RenderOptions.BitmapScalingMode="Fant"
+                               Width="60" Height="60"/>
+                    </Border>
+
+                    <Border Height="100" Width="100" 
+                            BorderBrush="{DynamicResource DefaultBrush}" 
+                            BorderThickness="5"
+                            CornerRadius="10"
+                            Margin="20,0">
+                        <Image Source="/Assets/Presentation/snowflake.png"
+                               RenderOptions.BitmapScalingMode="Fant"
+                               Width="60" Height="60"/>
+                    </Border>
+
+                    <Border Height="100" Width="100" 
+                            BorderBrush="{DynamicResource DefaultBrush}" 
+                            BorderThickness="5"
+                            CornerRadius="10"
+                            Margin="20,0">
+                        <Image Source="/Assets/Presentation/vision.png"
+                               RenderOptions.BitmapScalingMode="Fant"
+                               Width="60" Height="60"/>
+                    </Border>
+
+                </StackPanel>
             </StackPanel>
         </StackPanel>
         <StackPanel x:Name="Slide2"
-                    Background="#FF22272B"
-                    Visibility="Hidden">
-            <StackPanel Margin="20">
-                <TextBlock Text="Slide #2" FontSize="40" Foreground="Bisque"/>
+                    Background="#FF22272B" Visibility="Hidden">
+            <StackPanel Margin="20,0">
+                <TextBlock Text="3 Problems!" 
+                           FontSize="40"
+                           FontWeight="Bold"
+                           Foreground="{StaticResource DefaultBrush}"
+                           HorizontalAlignment="Center" FontFamily="{DynamicResource NotoSerifTC}"/>
+                <TextBlock Text="Today's modern screens have 3 major risks to your eyes:"
+                           Foreground="#FF4C565F"
+                           FontSize="14"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center" 
+                           FontFamily="{DynamicResource NotoSerifTC}"
+                           Margin="0,5,0,10"/>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            Margin="0,20,0,0">
+                    <Border Height="100" Width="100" 
+                            BorderBrush="{DynamicResource DefaultBrush}" 
+                            BorderThickness="5"
+                            CornerRadius="10"
+                            Margin="20,0"
+                            Background="{DynamicResource BackgroundBrush}">
+                        <Image Source="/Assets/Presentation/computer.png"
+                               RenderOptions.BitmapScalingMode="Fant"
+                               Width="60" Height="60"/>
+                    </Border>
+
+                    <Border Height="100" Width="100" 
+                            BorderBrush="{DynamicResource DefaultBrush}" 
+                            BorderThickness="5"
+                            CornerRadius="10"
+                            Margin="20,0">
+                        <Image Source="/Assets/Presentation/snowflake.png"
+                               RenderOptions.BitmapScalingMode="Fant"
+                               Width="60" Height="60"/>
+                    </Border>
+
+                    <Border Height="100" Width="100" 
+                            BorderBrush="{DynamicResource DefaultBrush}" 
+                            BorderThickness="5"
+                            CornerRadius="10"
+                            Margin="20,0">
+                        <Image Source="/Assets/Presentation/vision.png"
+                               RenderOptions.BitmapScalingMode="Fant"
+                               Width="60" Height="60"/>
+                    </Border>
+
+                </StackPanel>
+                <StackPanel Width="550"
+                            HorizontalAlignment="Center">
+                    <TextBlock Text="Screen Flickering" 
+                           FontSize="16"
+                           FontWeight="Bold"
+                           Foreground="{DynamicResource DefaultBrush}"
+                           FontFamily="{DynamicResource NotoSerifTC}"
+                               Margin="0,20,0,7"/>
+                    <TextBlock Text="Most screens don't have an actual adjustable brightness. They instead flicker their backlights off and on at various speeds in order to fake different brightness levels. This causes eye strain and headache! Setting a screen's brightness to its max solves this issue but it will be uncomfortable to look at! Also, a higher brightness means more blue light, which is our next problem!"
+                           Foreground="#FF4C565F"
+                           FontSize="14"
+                           FontWeight="Bold"
+                           FontFamily="{DynamicResource NotoSerifTC}"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="BlockLineHeight" 
+                           LineHeight="19"
+                           TextAlignment="Justify"/>
+
+                </StackPanel>
             </StackPanel>
         </StackPanel>
         <StackPanel x:Name="Slide3"
-                    Background="#FF22272B"
-                    Visibility="Hidden">
-            <StackPanel Margin="20">
-                <TextBlock Text="Slide #3" FontSize="40" Foreground="Aquamarine"/>
+                    Background="#FF22272B" Visibility="Hidden">
+            <StackPanel Margin="20,0">
+                <TextBlock Text="3 Problems!" 
+                           FontSize="40"
+                           FontWeight="Bold"
+                           Foreground="{DynamicResource DefaultBrush}"
+                           HorizontalAlignment="Center" FontFamily="{DynamicResource NotoSerifTC}"/>
+                <TextBlock Text="Today's modern screens have 3 major risks to your eyes:"
+                           Foreground="#FF4C565F"
+                           FontSize="14"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center" 
+                           FontFamily="{DynamicResource NotoSerifTC}"
+                           Margin="0,5,0,10"/>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            Margin="0,20,0,0">
+                    <Border Height="100" Width="100" 
+                            BorderBrush="{DynamicResource DefaultBrush}" 
+                            BorderThickness="5"
+                            CornerRadius="10"
+                            Margin="20,0">
+                        <Image Source="/Assets/Presentation/computer.png"
+                               RenderOptions.BitmapScalingMode="Fant"
+                               Width="60" Height="60"/>
+                    </Border>
+
+                    <Border Height="100" Width="100" 
+                            BorderBrush="{DynamicResource DefaultBrush}" 
+                            BorderThickness="5"
+                            CornerRadius="10"
+                            Margin="20,0"
+                            Background="{DynamicResource BackgroundBrush}">
+                        <Image Source="/Assets/Presentation/snowflake.png"
+                               RenderOptions.BitmapScalingMode="Fant"
+                               Width="60" Height="60"/>
+                    </Border>
+
+                    <Border Height="100" Width="100" 
+                            BorderBrush="{DynamicResource DefaultBrush}" 
+                            BorderThickness="5"
+                            CornerRadius="10"
+                            Margin="20,0">
+                        <Image Source="/Assets/Presentation/vision.png"
+                               RenderOptions.BitmapScalingMode="Fant"
+                               Width="60" Height="60"/>
+                    </Border>
+
+                </StackPanel>
+                <StackPanel Width="550"
+                            HorizontalAlignment="Center">
+                    <TextBlock Text="Blue Light" 
+                           FontSize="16"
+                           FontWeight="Bold"
+                           Foreground="{DynamicResource DefaultBrush}"
+                           FontFamily="{DynamicResource NotoSerifTC}"
+                               Margin="0,20,0,7"/>
+                    <TextBlock Text="Light in the blue spectrum is considered a high energy visible (HEV) which means that it penetrates all the way to the retina. This may increase the risk of Macular-degeneration and damage the light sensitivity of the cells in the retina!"
+                           Foreground="#FF4C565F"
+                           FontSize="14"
+                           FontWeight="Bold"
+                           FontFamily="{DynamicResource NotoSerifTC}"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="BlockLineHeight" 
+                           LineHeight="19"
+                           TextAlignment="Justify"/>
+
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel x:Name="Slide4"
+                    Background="#FF22272B" Visibility="Hidden">
+            <StackPanel Margin="20,0">
+                <TextBlock Text="3 Problems!" 
+                           FontSize="40"
+                           FontWeight="Bold"
+                           Foreground="{DynamicResource DefaultBrush}"
+                           HorizontalAlignment="Center" FontFamily="{DynamicResource NotoSerifTC}"/>
+                <TextBlock Text="Today's modern screens have 3 major risks to your eyes:"
+                           Foreground="#FF4C565F"
+                           FontSize="14"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center" 
+                           FontFamily="{DynamicResource NotoSerifTC}"
+                           Margin="0,5,0,10"/>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            Margin="0,20,0,0">
+                    <Border Height="100" Width="100" 
+                            BorderBrush="{DynamicResource DefaultBrush}" 
+                            BorderThickness="5"
+                            CornerRadius="10"
+                            Margin="20,0">
+                        <Image Source="/Assets/Presentation/computer.png"
+                               RenderOptions.BitmapScalingMode="Fant"
+                               Width="60" Height="60"/>
+                    </Border>
+
+                    <Border Height="100" Width="100" 
+                            BorderBrush="{DynamicResource DefaultBrush}" 
+                            BorderThickness="5"
+                            CornerRadius="10"
+                            Margin="20,0">
+                        <Image Source="/Assets/Presentation/snowflake.png"
+                               RenderOptions.BitmapScalingMode="Fant"
+                               Width="60" Height="60"/>
+                    </Border>
+
+                    <Border Height="100" Width="100" 
+                            BorderBrush="{DynamicResource DefaultBrush}" 
+                            BorderThickness="5"
+                            CornerRadius="10"
+                            Margin="20,0"
+                            Background="{DynamicResource BackgroundBrush}">
+                        <Image Source="/Assets/Presentation/vision.png"
+                               RenderOptions.BitmapScalingMode="Fant"
+                               Width="60" Height="60"/>
+                    </Border>
+
+                </StackPanel>
+                <StackPanel Width="550"
+                            HorizontalAlignment="Center">
+                    <TextBlock Text="Short-distance Focus" 
+                           FontSize="16"
+                           FontWeight="Bold"
+                           Foreground="{DynamicResource DefaultBrush}"
+                           FontFamily="{DynamicResource NotoSerifTC}"
+                               Margin="0,20,0,7"/>
+                    <TextBlock Text="Focusing on the same close object (the screen) for a long time causes losing eye sharpness over time. It also leads to Myopia, also known as nearsightedness or short-sightedness!"
+                           Foreground="#FF4C565F"
+                           FontSize="14"
+                           FontWeight="Bold"
+                           FontFamily="{DynamicResource NotoSerifTC}"
+                           TextWrapping="Wrap"
+                           LineStackingStrategy="BlockLineHeight" 
+                           LineHeight="19"
+                           TextAlignment="Justify"/>
+
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel x:Name="Slide5"
+            Background="#FF22272B" Visibility="Hidden">
+            <StackPanel Margin="20,0">
+                <TextBlock Text="iShield to the rescue!" 
+                    FontSize="40"
+                    FontWeight="Bold"
+                    Foreground="{DynamicResource DefaultBrush}"
+                    HorizontalAlignment="Center" FontFamily="{DynamicResource NotoSerifTC}"/>
+                <TextBlock Text="But don't worry! With iShield you can use your computer without sacrificing your health!"
+                    Foreground="#FF4C565F"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    HorizontalAlignment="Center" 
+                    FontFamily="{DynamicResource NotoSerifTC}"
+                    Margin="0,5,0,10"/>
+                <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="0,20,0,0">
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0">
+                        <Image Source="Assets/Presentation/brightness.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="60" Height="60"/>
+                    </Border>
+
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0">
+                        <Image Source="Assets/Presentation/sun-glasses.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="60" Height="60"/>
+                    </Border>
+
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0">
+                        <Image Source="Assets/Presentation/sandclock.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="50" Height="50"/>
+                    </Border>
+
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel x:Name="Slide6"
+            Background="#FF22272B" Visibility="Hidden">
+            <StackPanel Margin="20,0">
+                <TextBlock Text="iShield to the rescue!" 
+                    FontSize="40"
+                    FontWeight="Bold"
+                    Foreground="{DynamicResource DefaultBrush}"
+                    HorizontalAlignment="Center" FontFamily="{DynamicResource NotoSerifTC}"/>
+                <TextBlock Text="But don't worry! With iShield you can use your computer without sacrificing your health!"
+                    Foreground="#FF4C565F"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    HorizontalAlignment="Center" 
+                    FontFamily="{DynamicResource NotoSerifTC}"
+                    Margin="0,5,0,10"/>
+                <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="0,20,0,0">
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0"
+                        Background="{DynamicResource BackgroundBrush}">
+                        <Image Source="Assets/Presentation/brightness.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="60" Height="60"/>
+                    </Border>
+
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0">
+                        <Image Source="Assets/Presentation/sun-glasses.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="60" Height="60"/>
+                    </Border>
+
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0">
+                        <Image Source="Assets/Presentation/sandclock.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="50" Height="50"/>
+                    </Border>
+
+                </StackPanel>
+                <StackPanel Width="550"
+                    HorizontalAlignment="Center">
+                    <TextBlock Text="Programatically Adjustable Brightness" 
+                        FontSize="16"
+                        FontWeight="Bold"
+                        Foreground="{DynamicResource DefaultBrush}"
+                        FontFamily="{DynamicResource NotoSerifTC}"
+                        Margin="0,20,0,7"/>
+                    <TextBlock Text="By setting your screen's brightness to its max level, you will get rid of the screen flickering problem. You can then use iShield's brightness slider to decrease your screen's brightness programmatically without any flickerig!"
+                        Foreground="#FF4C565F"
+                        FontSize="14"
+                        FontWeight="Bold"
+                        FontFamily="{DynamicResource NotoSerifTC}"
+                        TextWrapping="Wrap"
+                        LineStackingStrategy="BlockLineHeight" 
+                        LineHeight="19"
+                        TextAlignment="Justify"/>
+
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel x:Name="Slide7"
+            Background="#FF22272B" Visibility="Hidden">
+            <StackPanel Margin="20,0">
+                <TextBlock Text="iShield to the rescue!" 
+                    FontSize="40"
+                    FontWeight="Bold"
+                    Foreground="{DynamicResource DefaultBrush}"
+                    HorizontalAlignment="Center" FontFamily="{DynamicResource NotoSerifTC}"/>
+                <TextBlock Text="But don't worry! With iShield you can use your computer without sacrificing your health!"
+                    Foreground="#FF4C565F"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    HorizontalAlignment="Center" 
+                    FontFamily="{DynamicResource NotoSerifTC}"
+                    Margin="0,5,0,10"/>
+                <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="0,20,0,0">
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0">
+                        <Image Source="Assets/Presentation/brightness.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="60" Height="60"/>
+                    </Border>
+
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0"
+                        Background="{DynamicResource BackgroundBrush}">
+                        <Image Source="Assets/Presentation/sun-glasses.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="60" Height="60"/>
+                    </Border>
+
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0">
+                        <Image Source="Assets/Presentation/sandclock.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="50" Height="50"/>
+                    </Border>
+
+                </StackPanel>
+                <StackPanel Width="550"
+                    HorizontalAlignment="Center">
+                    <TextBlock Text="Blue Light Filter" 
+                        FontSize="16"
+                        FontWeight="Bold"
+                        Foreground="{DynamicResource DefaultBrush}"
+                        FontFamily="{DynamicResource NotoSerifTC}"
+                        Margin="0,20,0,7"/>
+                    <TextBlock Text="With iShield's temperature slider you can control the color temperature of your screen to reduce the amount of blue light emitted from it. It's basically like filter glasses but adjustable. This way you can block up to 100% of the blue light!"
+                        Foreground="#FF4C565F"
+                        FontSize="14"
+                        FontWeight="Bold"
+                        FontFamily="{DynamicResource NotoSerifTC}"
+                        TextWrapping="Wrap"
+                        LineStackingStrategy="BlockLineHeight" 
+                        LineHeight="19"
+                        TextAlignment="Justify"/>
+
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel x:Name="Slide8"
+            Background="#FF22272B" Visibility="Hidden">
+            <StackPanel Margin="20,0">
+                <TextBlock Text="iShield to the rescue!" 
+                    FontSize="40"
+                    FontWeight="Bold"
+                    Foreground="{DynamicResource DefaultBrush}"
+                    HorizontalAlignment="Center" FontFamily="{DynamicResource NotoSerifTC}"/>
+                <TextBlock Text="But don't worry! With iShield you can use your computer without sacrificing your health!"
+                    Foreground="#FF4C565F"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    HorizontalAlignment="Center" 
+                    FontFamily="{DynamicResource NotoSerifTC}"
+                    Margin="0,5,0,10"/>
+                <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="0,20,0,0">
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0">
+                        <Image Source="Assets/Presentation/brightness.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="60" Height="60"/>
+                    </Border>
+
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0">
+                        <Image Source="Assets/Presentation/sun-glasses.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="60" Height="60"/>
+                    </Border>
+
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0"
+                        Background="{DynamicResource BackgroundBrush}">
+                        <Image Source="Assets/Presentation/sandclock.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="50" Height="50"/>
+                    </Border>
+
+                </StackPanel>
+                <StackPanel Width="550"
+                    HorizontalAlignment="Center">
+                    <TextBlock Text="Eye-Rest Timer" 
+                        FontSize="16"
+                        FontWeight="Bold"
+                        Foreground="{DynamicResource DefaultBrush}"
+                        FontFamily="{DynamicResource NotoSerifTC}"
+                        Margin="0,20,0,7"/>
+                    <TextBlock Text="Every few minutes, iShield reminds you to keep after your eyes! Showing you a popup window guiding you through some eye exercises. This helps you to avoid eye strain and Myopia. The timer itself is adjustable and can be tweaked from the &quot;Reminders&quot; section."
+                        Foreground="#FF4C565F"
+                        FontSize="14"
+                        FontWeight="Bold"
+                        FontFamily="{DynamicResource NotoSerifTC}"
+                        TextWrapping="Wrap"
+                        LineStackingStrategy="BlockLineHeight" 
+                        LineHeight="19"
+                        TextAlignment="Justify"/>
+
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel x:Name="Slide9"
+            Background="#FF22272B" Visibility="Hidden">
+            <StackPanel Margin="20,0">
+                <TextBlock Text="Additional Features!" 
+                    FontSize="40"
+                    FontWeight="Bold"
+                    Foreground="{DynamicResource DefaultBrush}"
+                    HorizontalAlignment="Center" FontFamily="{DynamicResource NotoSerifTC}"/>
+                <TextBlock Text="Your eyes are not the only things affected by the long use of computers, there's more! but again, iShield has got your back!"
+                    Foreground="#FF4C565F"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    HorizontalAlignment="Center" 
+                    FontFamily="{DynamicResource NotoSerifTC}"
+                    Margin="0,5,0,10"
+                    TextWrapping="Wrap"
+                    TextAlignment="Center"
+                    Width="500"/>
+                <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="0,20,0,0">
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0">
+                        <Image Source="Assets/Presentation/break-time.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="60" Height="60"/>
+                    </Border>
+
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0">
+                        <Image Source="Assets/Presentation/water-bottle.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="60" Height="60"/>
+                    </Border>
+
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0">
+                        <Image Source="Assets/Presentation/blink.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="50" Height="50"/>
+                    </Border>
+
+                </StackPanel>
+                <StackPanel Width="550"
+                    HorizontalAlignment="Center">
+                    <TextBlock Text="Reminders!" 
+                        FontSize="16"
+                        FontWeight="Bold"
+                        Foreground="{DynamicResource DefaultBrush}"
+                        FontFamily="{DynamicResource NotoSerifTC}"
+                        Margin="0,20,0,7"/>
+                    <TextBlock Text="iShield provides some additional features in the form of reminders. Those exist in order to keep after your entire health, not just your eyes! You can find those in the &quot;Reminders&quot; tab."
+                        Foreground="#FF4C565F"
+                        FontSize="14"
+                        FontWeight="Bold"
+                        FontFamily="{DynamicResource NotoSerifTC}"
+                        TextWrapping="Wrap"
+                        LineStackingStrategy="BlockLineHeight" 
+                        LineHeight="19"
+                        TextAlignment="Justify"/>
+
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel x:Name="Slide10"
+            Background="#FF22272B" Visibility="Hidden">
+            <StackPanel Margin="20,0">
+                <TextBlock Text="Additional Features!" 
+                    FontSize="40"
+                    FontWeight="Bold"
+                    Foreground="{DynamicResource DefaultBrush}"
+                    HorizontalAlignment="Center" FontFamily="{DynamicResource NotoSerifTC}"/>
+                <TextBlock Text="Your eyes are not the only things affected by the long use of computers, there's more! but again, iShield has got your back!"
+                    Foreground="#FF4C565F"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    HorizontalAlignment="Center" 
+                    FontFamily="{DynamicResource NotoSerifTC}"
+                    Margin="0,5,0,10"
+                    TextWrapping="Wrap"
+                    TextAlignment="Center"
+                    Width="500"/>
+                <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="0,20,0,0">
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0" Background="{DynamicResource BackgroundBrush}">
+                        <Image Source="Assets/Presentation/break-time.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="60" Height="60"/>
+                    </Border>
+
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0">
+                        <Image Source="Assets/Presentation/water-bottle.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="60" Height="60"/>
+                    </Border>
+
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0">
+                        <Image Source="Assets/Presentation/blink.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="50" Height="50"/>
+                    </Border>
+
+                </StackPanel>
+                <StackPanel Width="550"
+                    HorizontalAlignment="Center">
+                    <TextBlock Text="Break Time" 
+                        FontSize="16"
+                        FontWeight="Bold"
+                        Foreground="{DynamicResource DefaultBrush}"
+                        FontFamily="{DynamicResource NotoSerifTC}"
+                        Margin="0,20,0,7"/>
+                    <TextBlock Text="This feature will remind you to step away from the computer to rest your eyes, refresh your brain, and do some exercises to keep fit."
+                        Foreground="#FF4C565F"
+                        FontSize="14"
+                        FontWeight="Bold"
+                        FontFamily="{DynamicResource NotoSerifTC}"
+                        TextWrapping="Wrap"
+                        LineStackingStrategy="BlockLineHeight" 
+                        LineHeight="19"
+                        TextAlignment="Justify"/>
+
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel x:Name="Slide11"
+            Background="#FF22272B" Visibility="Hidden">
+            <StackPanel Margin="20,0">
+                <TextBlock Text="Additional Features!" 
+                    FontSize="40"
+                    FontWeight="Bold"
+                    Foreground="{DynamicResource DefaultBrush}"
+                    HorizontalAlignment="Center" FontFamily="{DynamicResource NotoSerifTC}"/>
+                <TextBlock Text="Your eyes are not the only things affected by the long use of computers, there's more! but again, iShield has got your back!"
+                    Foreground="#FF4C565F"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    HorizontalAlignment="Center" 
+                    FontFamily="{DynamicResource NotoSerifTC}"
+                    Margin="0,5,0,10"
+                    TextWrapping="Wrap"
+                    TextAlignment="Center"
+                    Width="500"/>
+                <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="0,20,0,0">
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0">
+                        <Image Source="Assets/Presentation/break-time.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="60" Height="60"/>
+                    </Border>
+
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0" Background="{DynamicResource BackgroundBrush}">
+                        <Image Source="Assets/Presentation/water-bottle.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="60" Height="60"/>
+                    </Border>
+
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0">
+                        <Image Source="Assets/Presentation/blink.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="50" Height="50"/>
+                    </Border>
+
+                </StackPanel>
+                <StackPanel Width="550"
+                    HorizontalAlignment="Center">
+                    <TextBlock Text="Hydration Timer" 
+                        FontSize="16"
+                        FontWeight="Bold"
+                        Foreground="{DynamicResource DefaultBrush}"
+                        FontFamily="{DynamicResource NotoSerifTC}"
+                        Margin="0,20,0,7"/>
+                    <TextBlock Text="This feature helps you not to forget to get hydrated."
+                        Foreground="#FF4C565F"
+                        FontSize="14"
+                        FontWeight="Bold"
+                        FontFamily="{DynamicResource NotoSerifTC}"
+                        TextWrapping="Wrap"
+                        LineStackingStrategy="BlockLineHeight" 
+                        LineHeight="19"
+                        TextAlignment="Justify"/>
+
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel x:Name="Slide12"
+            Background="#FF22272B" Visibility="Hidden">
+            <StackPanel Margin="20,0">
+                <TextBlock Text="Additional Features!" 
+                    FontSize="40"
+                    FontWeight="Bold"
+                    Foreground="{DynamicResource DefaultBrush}"
+                    HorizontalAlignment="Center" FontFamily="{DynamicResource NotoSerifTC}"/>
+                <TextBlock Text="Your eyes are not the only things affected by the long use of computers, there's more! but again, iShield has got your back!"
+                    Foreground="#FF4C565F"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    HorizontalAlignment="Center" 
+                    FontFamily="{DynamicResource NotoSerifTC}"
+                    Margin="0,5,0,10"
+                    TextWrapping="Wrap"
+                    TextAlignment="Center"
+                    Width="500"/>
+                <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="0,20,0,0">
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0">
+                        <Image Source="Assets/Presentation/break-time.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="60" Height="60"/>
+                    </Border>
+
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0">
+                        <Image Source="Assets/Presentation/water-bottle.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="60" Height="60"/>
+                    </Border>
+
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0" Background="{DynamicResource BackgroundBrush}">
+                        <Image Source="Assets/Presentation/blink.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="50" Height="50"/>
+                    </Border>
+
+                </StackPanel>
+                <StackPanel Width="550"
+                    HorizontalAlignment="Center">
+                    <TextBlock Text="Blink Timer" 
+                        FontSize="16"
+                        FontWeight="Bold"
+                        Foreground="{DynamicResource DefaultBrush}"
+                        FontFamily="{DynamicResource NotoSerifTC}"
+                        Margin="0,20,0,7"/>
+                    <TextBlock Text="Researchers found that people blink a lot less than the normal rate while staring at monitors which causes eye drain over time! This feature will cause your screen to flash quickly once every few seconds reminding you to blink. The color of the flash is adjustable and is recommended to be set to a dark color so that it doesn't hurt your eyes!"
+                        Foreground="#FF4C565F"
+                        FontSize="14"
+                        FontWeight="Bold"
+                        FontFamily="{DynamicResource NotoSerifTC}"
+                        TextWrapping="Wrap"
+                        LineStackingStrategy="BlockLineHeight" 
+                        LineHeight="19"
+                        TextAlignment="Justify"/>
+
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel x:Name="Slide13"
+            Background="#FF22272B" Visibility="Hidden">
+            <StackPanel Margin="20,0">
+                <TextBlock Text="Notes" 
+                    FontSize="40"
+                    FontWeight="Bold"
+                    Foreground="{DynamicResource DefaultBrush}"
+                    HorizontalAlignment="Center" FontFamily="{DynamicResource NotoSerifTC}"/>
+                <TextBlock Text="Please consider the following:"
+                    Foreground="#FF4C565F"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    HorizontalAlignment="Center" 
+                    FontFamily="{DynamicResource NotoSerifTC}"
+                    Margin="0,5,0,10"
+                    TextWrapping="Wrap"
+                    TextAlignment="Center"
+                    Width="500"/>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            Margin="0,0,0,10">
+                    <Border Width="10" Height="10"
+                            CornerRadius="10"
+                            Background="{DynamicResource DefaultBrush}"
+                            Margin="0,5,10,0"
+                            VerticalAlignment="Top"/>
+                    <TextBlock Text="Set the brightness of your monitor(s) to its max level and control brightness only using iShield's brightness slider."
+                        Foreground="#FF4C565F"
+                        FontSize="14"
+                        FontWeight="Bold"
+                        FontFamily="{DynamicResource NotoSerifTC}"
+                        LineStackingStrategy="BlockLineHeight" 
+                        LineHeight="19"
+                        TextAlignment="Justify"
+                        TextWrapping="Wrap"
+                        Width="530"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            Margin="0,0,0,10">
+                    <Border Width="10" Height="10"
+                            CornerRadius="10"
+                            Background="{DynamicResource DefaultBrush}"
+                            Margin="0,5,10,0"
+                            VerticalAlignment="Top"/>
+                    <TextBlock Text="The &quot;Always keep max brightness&quot; option in the &quot;Settings&quot; tab may do that for you automatically, but it works only for laptop screens, if you have an external monitor (or multiple ones), you still need to do that manually."
+                        Foreground="#FF4C565F"
+                        FontSize="14"
+                        FontWeight="Bold"
+                        FontFamily="{DynamicResource NotoSerifTC}"
+                        LineStackingStrategy="BlockLineHeight" 
+                        LineHeight="19"
+                        TextAlignment="Justify"
+                        TextWrapping="Wrap"
+                        Width="530"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            Margin="0,0,0,10">
+                    <Border Width="10" Height="10"
+                            CornerRadius="10"
+                            Background="{DynamicResource DefaultBrush}"
+                            Margin="0,5,10,0"
+                            VerticalAlignment="Top"/>
+                    <TextBlock Text="Turn off night light/reading mode features from your OS or app if you're using any. This will prevent conflicts between them and iShield."
+                        Foreground="#FF4C565F"
+                        FontSize="14"
+                        FontWeight="Bold"
+                        FontFamily="{DynamicResource NotoSerifTC}"
+                        LineStackingStrategy="BlockLineHeight" 
+                        LineHeight="19"
+                        TextAlignment="Justify"
+                        TextWrapping="Wrap"
+                        Width="530"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            Margin="0,0,0,10">
+                    <Border Width="10" Height="10"
+                            CornerRadius="10"
+                            Background="{DynamicResource DefaultBrush}"
+                            Margin="0,5,10,0"
+                            VerticalAlignment="Top"/>
+                    <TextBlock Text="While the default settings and values used by iShield (e.g. time between Eye-Rest reminders) are based on scientific and medical suggestions, you don't have to stick to them. All of iShield's features are adjustable and optional and you can use any combination of them."
+                        Foreground="#FF4C565F"
+                        FontSize="14"
+                        FontWeight="Bold"
+                        FontFamily="{DynamicResource NotoSerifTC}"
+                        LineStackingStrategy="BlockLineHeight" 
+                        LineHeight="19"
+                        TextAlignment="Justify"
+                        TextWrapping="Wrap"
+                        Width="530"/>
+                </StackPanel>
+
             </StackPanel>
         </StackPanel>
         <Button Width="75" Padding="15,5"
@@ -74,7 +974,8 @@
                 Margin="20" Click="NextSlide"
                 Style="{StaticResource FlatButtonStyle}">
             <TextBlock x:Name="NextButtonText"
-                       Text="Next >"
+                       FontFamily="{StaticResource NotoSerifTC}"
+                       Text="Next &gt;"
                        FontSize="15"
                        Foreground="White"
                        HorizontalAlignment="Center"

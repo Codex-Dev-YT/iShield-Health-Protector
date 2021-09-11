@@ -87,15 +87,15 @@
                 </RadioButton>
                 <RadioButton x:Name="btnReminders" Margin="0,15,0,0" Padding="10" Width="35" Height="35"
                               Style="{StaticResource FlatButtonStyle}" Checked="ChangePage">
-                    <Image Source="/Assets/Icons/home.png" RenderOptions.BitmapScalingMode="Fant" />
+                    <Image Source="/Assets/Icons/reminders.png" RenderOptions.BitmapScalingMode="Fant" />
                 </RadioButton>
                 <RadioButton x:Name="btnPresentation" Margin="0,15,0,0" Padding="10" Width="35" Height="35"
                               Style="{StaticResource FlatButtonStyle}" Checked="ChangePage">
-                    <Image Source="/Assets/Icons/home.png" RenderOptions.BitmapScalingMode="Fant" />
+                    <Image Source="/Assets/Icons/Why iShield.png" RenderOptions.BitmapScalingMode="Fant" />
                 </RadioButton>
                 <RadioButton x:Name="btnAbout" Margin="0,15,0,0" Padding="10" Width="35" Height="35"
                               Style="{StaticResource FlatButtonStyle}" Checked="ChangePage">
-                    <Image Source="/Assets/Icons/home.png" RenderOptions.BitmapScalingMode="Fant" />
+                    <Image Source="/Assets/Icons/information.png" RenderOptions.BitmapScalingMode="Fant" />
                 </RadioButton>
             </StackPanel>
         </StackPanel>
