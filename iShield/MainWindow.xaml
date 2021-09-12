@@ -106,8 +106,23 @@
                 <StackPanel x:Name="pnlSettings" Visibility="Hidden" Background="#FF22272B" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock Text="Settings" Foreground="Bisque" FontSize="50"  Margin="0,-30,0,0"/>
                 </StackPanel>
-                <StackPanel x:Name="pnlReminders" Visibility="Hidden" Background="#FF22272B" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock Text="Reminders" Foreground="Bisque" FontSize="50" Margin="0,-30,0,0"/>
+                <StackPanel x:Name="pnlReminders" Background="#FF22272B" Visibility="Hidden">
+                    <Grid Height="400" Margin="80,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <local:TimerInterface x:Name="Eye_Rest_Timer" Title="Eye-Rest Timer" Margin="10" Grid.Column="0" Grid.Row="0"/>
+                        <local:TimerInterface x:Name="Break_Time" Title="Break Time" Margin="10" Grid.Column="1" Grid.Row="0"/>
+                        <local:TimerInterface x:Name="Hydration_Timer" Title="Hydration Timer" Margin="10" Grid.Column="0" Grid.Row="1"/>
+                        <local:TimerInterface x:Name="Blink_Timer" Title="Blink Timer" Margin="10" Grid.Column="1" Grid.Row="1"/>
+                    </Grid>
                 </StackPanel>
                 <StackPanel x:Name="pnlPresentation" Background="#FF22272B" Visibility="Hidden">
                     <local:ContentSlider x:Name="Presentation"

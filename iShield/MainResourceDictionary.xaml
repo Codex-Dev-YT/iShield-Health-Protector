@@ -7,4 +7,17 @@
     <Style TargetType="{x:Type TextBlock}">
         <Setter Property="FontFamily" Value="{StaticResource NotoSerifTC}" />
     </Style>
+
+    <Style TargetType="{x:Type TextBox}">
+        <Setter Property="FontFamily" Value="{StaticResource NotoSerifTC}" />
+    </Style>
+
+    <Style TargetType="{x:Type UserControl}">
+        <Setter Property="FontFamily" Value="{StaticResource NotoSerifTC}" />
+    </Style>
+    
+    <Style TargetType="{x:Type Control}">
+        <Setter Property="FontFamily" Value="{StaticResource NotoSerifTC}" />
+    </Style>
+
 </ResourceDictionary>
