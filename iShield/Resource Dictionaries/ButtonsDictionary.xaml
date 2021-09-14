@@ -39,4 +39,27 @@
         </Style.Triggers>
 
     </Style>
+
+    
+    <!-- Flat UI Button Style -->
+    
+    <SolidColorBrush x:Key="DefaultUIBrush" Color="Transparent" />
+    <SolidColorBrush x:Key="HighlightUIBrush" Color="#FF293036" />
+    <SolidColorBrush x:Key="PressedUIBrush" Color="#15191c" />
+
+    <Style TargetType="Button" x:Key="FlatUIButtonStyle" BasedOn="{StaticResource FlatButtonStyle}">
+        <Setter Property="Background" Value="{StaticResource DefaultUIBrush}" />
+        
+        <Style.Triggers>
+
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource HighlightUIBrush}" />
+            </Trigger>
+
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{StaticResource PressedUIBrush}" />
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
 </ResourceDictionary>

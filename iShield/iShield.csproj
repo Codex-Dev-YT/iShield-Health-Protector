@@ -194,8 +194,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\UI\close.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Assets\UI\minimize.png" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

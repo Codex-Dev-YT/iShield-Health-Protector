@@ -46,7 +46,26 @@
             </StackPanel>
         </StackPanel>
         <StackPanel x:Name="Main" Grid.ColumnSpan="2" Grid.Column="1">
-            <StackPanel x:Name="Titlebar" Height="30" MouseDown="Titlebar_MouseDown" Background="#FF22272B"/>
+            <StackPanel x:Name="Titlebar" Height="30" MouseDown="Titlebar_MouseDown" Background="#FF22272B">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,20,0" Background="#FF1D2227">
+                    <Button x:Name="btnMinimize"
+                        Style="{DynamicResource FlatUIButtonStyle}"
+                        Width="26" Height="26"
+                        Padding="8"
+                        Cursor="Hand" Click="btnMinimize_Click">
+                        <Image Source="../Assets/UI/minimize.png" RenderOptions.BitmapScalingMode="Fant"
+                           Opacity="0.3" Margin="0,0,0,0"/>
+                    </Button>
+                    <Button x:Name="btnClose"
+                        Style="{DynamicResource FlatUIButtonStyle}"
+                        Width="26" Height="26"
+                        Padding="8"
+                        Cursor="Hand" Click="btnClose_Click">
+                        <Image Source="../Assets/UI/close.png" RenderOptions.BitmapScalingMode="Fant"
+                           Opacity="0.3"/>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
             <Grid x:Name="Pages" Height="420">
                 <StackPanel x:Name="pnlSettings" 
                             Background="#FF22272B"
