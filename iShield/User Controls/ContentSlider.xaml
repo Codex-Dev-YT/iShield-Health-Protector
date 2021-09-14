@@ -40,7 +40,7 @@
                             BorderThickness="5"
                             CornerRadius="10"
                             Margin="20,0">
-                        <Image Source="/Assets/Presentation/computer.png"
+                        <Image Source="/../Assets/Presentation/computer.png"
                                RenderOptions.BitmapScalingMode="Fant"
                                Width="60" Height="60"/>
                     </Border>
@@ -50,7 +50,7 @@
                             BorderThickness="5"
                             CornerRadius="10"
                             Margin="20,0">
-                        <Image Source="/Assets/Presentation/snowflake.png"
+                        <Image Source="/../Assets/Presentation/snowflake.png"
                                RenderOptions.BitmapScalingMode="Fant"
                                Width="60" Height="60"/>
                     </Border>
@@ -60,7 +60,7 @@
                             BorderThickness="5"
                             CornerRadius="10"
                             Margin="20,0">
-                        <Image Source="/Assets/Presentation/vision.png"
+                        <Image Source="/../Assets/Presentation/vision.png"
                                RenderOptions.BitmapScalingMode="Fant"
                                Width="60" Height="60"/>
                     </Border>
@@ -92,7 +92,7 @@
                             CornerRadius="10"
                             Margin="20,0"
                             Background="{DynamicResource BackgroundBrush}">
-                        <Image Source="/Assets/Presentation/computer.png"
+                        <Image Source="/../Assets/Presentation/computer.png"
                                RenderOptions.BitmapScalingMode="Fant"
                                Width="60" Height="60"/>
                     </Border>
@@ -102,7 +102,7 @@
                             BorderThickness="5"
                             CornerRadius="10"
                             Margin="20,0">
-                        <Image Source="/Assets/Presentation/snowflake.png"
+                        <Image Source="/../Assets/Presentation/snowflake.png"
                                RenderOptions.BitmapScalingMode="Fant"
                                Width="60" Height="60"/>
                     </Border>
@@ -112,7 +112,7 @@
                             BorderThickness="5"
                             CornerRadius="10"
                             Margin="20,0">
-                        <Image Source="/Assets/Presentation/vision.png"
+                        <Image Source="/../Assets/Presentation/vision.png"
                                RenderOptions.BitmapScalingMode="Fant"
                                Width="60" Height="60"/>
                     </Border>
@@ -162,7 +162,7 @@
                             BorderThickness="5"
                             CornerRadius="10"
                             Margin="20,0">
-                        <Image Source="/Assets/Presentation/computer.png"
+                        <Image Source="/../Assets/Presentation/computer.png"
                                RenderOptions.BitmapScalingMode="Fant"
                                Width="60" Height="60"/>
                     </Border>
@@ -173,7 +173,7 @@
                             CornerRadius="10"
                             Margin="20,0"
                             Background="{DynamicResource BackgroundBrush}">
-                        <Image Source="/Assets/Presentation/snowflake.png"
+                        <Image Source="/../Assets/Presentation/snowflake.png"
                                RenderOptions.BitmapScalingMode="Fant"
                                Width="60" Height="60"/>
                     </Border>
@@ -183,7 +183,7 @@
                             BorderThickness="5"
                             CornerRadius="10"
                             Margin="20,0">
-                        <Image Source="/Assets/Presentation/vision.png"
+                        <Image Source="/../Assets/Presentation/vision.png"
                                RenderOptions.BitmapScalingMode="Fant"
                                Width="60" Height="60"/>
                     </Border>
@@ -233,7 +233,7 @@
                             BorderThickness="5"
                             CornerRadius="10"
                             Margin="20,0">
-                        <Image Source="/Assets/Presentation/computer.png"
+                        <Image Source="/../Assets/Presentation/computer.png"
                                RenderOptions.BitmapScalingMode="Fant"
                                Width="60" Height="60"/>
                     </Border>
@@ -243,7 +243,7 @@
                             BorderThickness="5"
                             CornerRadius="10"
                             Margin="20,0">
-                        <Image Source="/Assets/Presentation/snowflake.png"
+                        <Image Source="/../Assets/Presentation/snowflake.png"
                                RenderOptions.BitmapScalingMode="Fant"
                                Width="60" Height="60"/>
                     </Border>
@@ -254,7 +254,7 @@
                             CornerRadius="10"
                             Margin="20,0"
                             Background="{DynamicResource BackgroundBrush}">
-                        <Image Source="/Assets/Presentation/vision.png"
+                        <Image Source="/../Assets/Presentation/vision.png"
                                RenderOptions.BitmapScalingMode="Fant"
                                Width="60" Height="60"/>
                     </Border>
@@ -304,7 +304,7 @@
                         BorderThickness="5"
                         CornerRadius="10"
                         Margin="20,0">
-                        <Image Source="Assets/Presentation/brightness.png"
+                        <Image Source="../Assets/Presentation/brightness.png"
                             RenderOptions.BitmapScalingMode="Fant"
                             Width="60" Height="60"/>
                     </Border>
@@ -314,7 +314,7 @@
                         BorderThickness="5"
                         CornerRadius="10"
                         Margin="20,0">
-                        <Image Source="Assets/Presentation/sun-glasses.png"
+                        <Image Source="../Assets/Presentation/sun-glasses.png"
                             RenderOptions.BitmapScalingMode="Fant"
                             Width="60" Height="60"/>
                     </Border>
@@ -324,7 +324,7 @@
                         BorderThickness="5"
                         CornerRadius="10"
                         Margin="20,0">
-                        <Image Source="Assets/Presentation/sandclock.png"
+                        <Image Source="../Assets/Presentation/sandclock.png"
                             RenderOptions.BitmapScalingMode="Fant"
                             Width="50" Height="50"/>
                     </Border>
@@ -356,7 +356,7 @@
                         CornerRadius="10"
                         Margin="20,0"
                         Background="{DynamicResource BackgroundBrush}">
-                        <Image Source="Assets/Presentation/brightness.png"
+                        <Image Source="../Assets/Presentation/brightness.png"
                             RenderOptions.BitmapScalingMode="Fant"
                             Width="60" Height="60"/>
                     </Border>
@@ -366,7 +366,7 @@
                         BorderThickness="5"
                         CornerRadius="10"
                         Margin="20,0">
-                        <Image Source="Assets/Presentation/sun-glasses.png"
+                        <Image Source="../Assets/Presentation/sun-glasses.png"
                             RenderOptions.BitmapScalingMode="Fant"
                             Width="60" Height="60"/>
                     </Border>
@@ -376,7 +376,7 @@
                         BorderThickness="5"
                         CornerRadius="10"
                         Margin="20,0">
-                        <Image Source="Assets/Presentation/sandclock.png"
+                        <Image Source="../Assets/Presentation/sandclock.png"
                             RenderOptions.BitmapScalingMode="Fant"
                             Width="50" Height="50"/>
                     </Border>
@@ -426,7 +426,7 @@
                         BorderThickness="5"
                         CornerRadius="10"
                         Margin="20,0">
-                        <Image Source="Assets/Presentation/brightness.png"
+                        <Image Source="../Assets/Presentation/brightness.png"
                             RenderOptions.BitmapScalingMode="Fant"
                             Width="60" Height="60"/>
                     </Border>
@@ -437,7 +437,7 @@
                         CornerRadius="10"
                         Margin="20,0"
                         Background="{DynamicResource BackgroundBrush}">
-                        <Image Source="Assets/Presentation/sun-glasses.png"
+                        <Image Source="../Assets/Presentation/sun-glasses.png"
                             RenderOptions.BitmapScalingMode="Fant"
                             Width="60" Height="60"/>
                     </Border>
@@ -447,7 +447,7 @@
                         BorderThickness="5"
                         CornerRadius="10"
                         Margin="20,0">
-                        <Image Source="Assets/Presentation/sandclock.png"
+                        <Image Source="../Assets/Presentation/sandclock.png"
                             RenderOptions.BitmapScalingMode="Fant"
                             Width="50" Height="50"/>
                     </Border>
@@ -497,7 +497,7 @@
                         BorderThickness="5"
                         CornerRadius="10"
                         Margin="20,0">
-                        <Image Source="Assets/Presentation/brightness.png"
+                        <Image Source="../Assets/Presentation/brightness.png"
                             RenderOptions.BitmapScalingMode="Fant"
                             Width="60" Height="60"/>
                     </Border>
@@ -507,7 +507,7 @@
                         BorderThickness="5"
                         CornerRadius="10"
                         Margin="20,0">
-                        <Image Source="Assets/Presentation/sun-glasses.png"
+                        <Image Source="../Assets/Presentation/sun-glasses.png"
                             RenderOptions.BitmapScalingMode="Fant"
                             Width="60" Height="60"/>
                     </Border>
@@ -518,7 +518,7 @@
                         CornerRadius="10"
                         Margin="20,0"
                         Background="{DynamicResource BackgroundBrush}">
-                        <Image Source="Assets/Presentation/sandclock.png"
+                        <Image Source="../Assets/Presentation/sandclock.png"
                             RenderOptions.BitmapScalingMode="Fant"
                             Width="50" Height="50"/>
                     </Border>
@@ -571,7 +571,7 @@
                         BorderThickness="5"
                         CornerRadius="10"
                         Margin="20,0">
-                        <Image Source="Assets/Presentation/break-time.png"
+                        <Image Source="../Assets/Presentation/break-time.png"
                             RenderOptions.BitmapScalingMode="Fant"
                             Width="60" Height="60"/>
                     </Border>
@@ -581,7 +581,7 @@
                         BorderThickness="5"
                         CornerRadius="10"
                         Margin="20,0">
-                        <Image Source="Assets/Presentation/water-bottle.png"
+                        <Image Source="../Assets/Presentation/water-bottle.png"
                             RenderOptions.BitmapScalingMode="Fant"
                             Width="60" Height="60"/>
                     </Border>
@@ -591,7 +591,7 @@
                         BorderThickness="5"
                         CornerRadius="10"
                         Margin="20,0">
-                        <Image Source="Assets/Presentation/blink.png"
+                        <Image Source="../Assets/Presentation/blink.png"
                             RenderOptions.BitmapScalingMode="Fant"
                             Width="50" Height="50"/>
                     </Border>
@@ -644,7 +644,7 @@
                         BorderThickness="5"
                         CornerRadius="10"
                         Margin="20,0" Background="{DynamicResource BackgroundBrush}">
-                        <Image Source="Assets/Presentation/break-time.png"
+                        <Image Source="../Assets/Presentation/break-time.png"
                             RenderOptions.BitmapScalingMode="Fant"
                             Width="60" Height="60"/>
                     </Border>
@@ -654,7 +654,7 @@
                         BorderThickness="5"
                         CornerRadius="10"
                         Margin="20,0">
-                        <Image Source="Assets/Presentation/water-bottle.png"
+                        <Image Source="../Assets/Presentation/water-bottle.png"
                             RenderOptions.BitmapScalingMode="Fant"
                             Width="60" Height="60"/>
                     </Border>
@@ -664,7 +664,7 @@
                         BorderThickness="5"
                         CornerRadius="10"
                         Margin="20,0">
-                        <Image Source="Assets/Presentation/blink.png"
+                        <Image Source="../Assets/Presentation/blink.png"
                             RenderOptions.BitmapScalingMode="Fant"
                             Width="50" Height="50"/>
                     </Border>
@@ -717,7 +717,7 @@
                         BorderThickness="5"
                         CornerRadius="10"
                         Margin="20,0">
-                        <Image Source="Assets/Presentation/break-time.png"
+                        <Image Source="../Assets/Presentation/break-time.png"
                             RenderOptions.BitmapScalingMode="Fant"
                             Width="60" Height="60"/>
                     </Border>
@@ -727,7 +727,7 @@
                         BorderThickness="5"
                         CornerRadius="10"
                         Margin="20,0" Background="{DynamicResource BackgroundBrush}">
-                        <Image Source="Assets/Presentation/water-bottle.png"
+                        <Image Source="../Assets/Presentation/water-bottle.png"
                             RenderOptions.BitmapScalingMode="Fant"
                             Width="60" Height="60"/>
                     </Border>
@@ -737,7 +737,7 @@
                         BorderThickness="5"
                         CornerRadius="10"
                         Margin="20,0">
-                        <Image Source="Assets/Presentation/blink.png"
+                        <Image Source="../Assets/Presentation/blink.png"
                             RenderOptions.BitmapScalingMode="Fant"
                             Width="50" Height="50"/>
                     </Border>
@@ -790,7 +790,7 @@
                         BorderThickness="5"
                         CornerRadius="10"
                         Margin="20,0">
-                        <Image Source="Assets/Presentation/break-time.png"
+                        <Image Source="../Assets/Presentation/break-time.png"
                             RenderOptions.BitmapScalingMode="Fant"
                             Width="60" Height="60"/>
                     </Border>
@@ -800,7 +800,7 @@
                         BorderThickness="5"
                         CornerRadius="10"
                         Margin="20,0">
-                        <Image Source="Assets/Presentation/water-bottle.png"
+                        <Image Source="../Assets/Presentation/water-bottle.png"
                             RenderOptions.BitmapScalingMode="Fant"
                             Width="60" Height="60"/>
                     </Border>
@@ -810,7 +810,7 @@
                         BorderThickness="5"
                         CornerRadius="10"
                         Margin="20,0" Background="{DynamicResource BackgroundBrush}">
-                        <Image Source="Assets/Presentation/blink.png"
+                        <Image Source="../Assets/Presentation/blink.png"
                             RenderOptions.BitmapScalingMode="Fant"
                             Width="50" Height="50"/>
                     </Border>

@@ -73,19 +73,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="ButtonsDictionary.xaml">
+    <Page Include="Resource Dictionaries\ButtonsDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ContentSlider.xaml">
+    <Page Include="User Controls\ContentSlider.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainResourceDictionary.xaml">
+    <Page Include="Resource Dictionaries\MainResourceDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -93,15 +93,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ContentSlider.xaml.cs">
+    <Compile Include="User Controls\ContentSlider.xaml.cs">
       <DependentUpon>ContentSlider.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TimerInterface.xaml.cs">
+    <Compile Include="User Controls\TimerInterface.xaml.cs">
       <DependentUpon>TimerInterface.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Toggle.cs" />
+    <Compile Include="Custom Controls\Toggle.cs" />
     <Compile Include="Utilities\DwmDropShadow.cs" />
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -109,11 +109,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="TimerInterface.xaml">
+    <Page Include="User Controls\TimerInterface.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ToggleButtonsDictionary.xaml">
+    <Page Include="Resource Dictionaries\ToggleButtonsDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -192,5 +192,10 @@
   <ItemGroup>
     <Resource Include="Assets\Icons\reminders.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\UI\close.png" />
+    <Resource Include="Assets\UI\minimize.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
