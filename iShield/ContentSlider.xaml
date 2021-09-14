@@ -11,44 +11,10 @@
         <FontFamily x:Key="NotoSerifTC" >/Assets/Fonts/#Noto Serif TC</FontFamily>
         <SolidColorBrush x:Key="BackgroundBrush" Color="#26FC5453" />
 
-        <!-- Flat Button Style -->
-
         <SolidColorBrush x:Key="DefaultBrush" Color="#FFFC5453" />
         <SolidColorBrush x:Key="HighlightBrush" Color="#FFFB6261" />
         <SolidColorBrush x:Key="PressedBrush" Color="#FFFC5453" />
 
-        <Style TargetType="Button" x:Key="FlatButtonStyle">
-            <Setter Property="OverridesDefaultStyle" Value="True" />
-            <Setter Property="Background" Value="{StaticResource DefaultBrush}" />
-            <Setter Property="BorderThickness" Value="0" />
-            <Setter Property="BorderBrush" Value="Transparent" />
-
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border BorderThickness="{TemplateBinding BorderThickness}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                Background="{TemplateBinding Background}"
-                                Padding="{TemplateBinding Padding}"
-                                CornerRadius="0">
-                            <ContentControl Content="{TemplateBinding Content}" />
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-
-            <Style.Triggers>
-
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="{StaticResource HighlightBrush}" />
-                </Trigger>
-
-                <Trigger Property="IsPressed" Value="True">
-                    <Setter Property="Background" Value="{StaticResource PressedBrush}" />
-                </Trigger>
-            </Style.Triggers>
-
-        </Style>
     </UserControl.Resources>
     <Grid Background="Transparent" Height="420">
         <StackPanel x:Name="Slide1"
@@ -954,7 +920,7 @@
                             Background="{DynamicResource DefaultBrush}"
                             Margin="0,5,10,0"
                             VerticalAlignment="Top"/>
-                    <TextBlock Text="While the default settings and values used by iShield (e.g. time between Eye-Rest reminders) are based on scientific and medical suggestions, you don't have to stick to them. All of iShield's features are adjustable and optional and you can use any combination of them."
+                    <TextBlock Text="While the default settings/values used by iShield are based on scientific and medical suggestions, you don't have to stick to them. All of iShield's features are adjustable and optional and you can use any combination of them."
                         Foreground="#FF4C565F"
                         FontSize="14"
                         FontWeight="Bold"
@@ -965,7 +931,25 @@
                         TextWrapping="Wrap"
                         Width="530"/>
                 </StackPanel>
-
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            Margin="0,0,0,10">
+                    <Border Width="10" Height="10"
+                            CornerRadius="10"
+                            Background="{DynamicResource DefaultBrush}"
+                            Margin="0,5,10,0"
+                            VerticalAlignment="Top"/>
+                    <TextBlock Text="To enable/disable protection, click on the icon in the upper left corner of the window."
+                        Foreground="#FF4C565F"
+                        FontSize="14"
+                        FontWeight="Bold"
+                        FontFamily="{DynamicResource NotoSerifTC}"
+                        LineStackingStrategy="BlockLineHeight" 
+                        LineHeight="19"
+                        TextAlignment="Justify"
+                        TextWrapping="Wrap"
+                        Width="530"/>
+                </StackPanel>
             </StackPanel>
         </StackPanel>
         <Button Width="75" Padding="15,5"

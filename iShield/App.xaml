@@ -4,6 +4,12 @@
              xmlns:local="clr-namespace:iShield"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <ResourceDictionary Source="/MainResourceDictionary.xaml"/>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/MainResourceDictionary.xaml"/>
+                <ResourceDictionary Source="/ButtonsDictionary.xaml"/>
+                <ResourceDictionary Source="/ToggleButtonsDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
