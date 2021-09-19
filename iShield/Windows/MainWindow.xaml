@@ -11,7 +11,9 @@
         ResizeMode="NoResize"
         Background="#22272b"
         AllowsTransparency="False"
-        WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+        WindowStartupLocation="CenterScreen" 
+        Loaded="Window_Loaded" 
+        Closing="Window_Closing">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="60"/>
@@ -23,8 +25,8 @@
                    Source="/Assets/Icons/iShield Icon.ico" 
                    RenderOptions.BitmapScalingMode="Fant"
                    Width="40" Height="40"
-                   Margin="0,10,0,70"/>
-
+                   Margin="0,10,0,70"  Cursor="Hand"
+                   MouseLeftButtonDown="imgIcon_MouseLeftButtonDown"/>
             <StackPanel>
                 <RadioButton x:Name="btnSettings" Margin="0,15,0,0" Padding="10" Width="35" Height="35"
                               Style="{StaticResource FlatToggleButtonStyle}"
@@ -70,7 +72,7 @@
                 <StackPanel x:Name="pnlSettings" 
                             Background="#FF22272B"
                             Height="400" 
-                            Orientation="Vertical" Visibility="Hidden">
+                            Orientation="Vertical" Visibility="Visible">
                     <Grid Margin="80,0">
                         <Grid.RowDefinitions>
                             <RowDefinition/>
@@ -92,13 +94,14 @@
                                    FontSize="14"
                                    Margin="0,0,0,10"/>
                         <Slider x:Name="sldBrightness"
-                                Minimum="0" Maximum="128" Value="64"
+                                Minimum="0" Maximum="127" Value="100"
                                 SmallChange="1" LargeChange="10"
                                 IsSnapToTickEnabled="True" TickFrequency="1"
                                 Grid.Column="1" Grid.Row="1"
                                 IsSelectionRangeEnabled="True" 
-                                SelectionStart="0" SelectionEnd="255"
-                                Width="300" HorizontalAlignment="Right">
+                                SelectionStart="0" SelectionEnd="127"
+                                Width="300" HorizontalAlignment="Right"
+                                ValueChanged="ColorFilterSliders_ValueChanged">
                             <Slider.Resources>
                                 <LinearGradientBrush x:Key="{x:Static SystemColors.HighlightBrushKey}">
                                     <GradientStop Color="White" Offset="1"/>
@@ -112,13 +115,14 @@
                                    FontSize="14"
                                    Margin="0,0,0,10"/>
                         <Slider x:Name="sldTemperature"
-                                Minimum="0" Maximum="128" Value="64"
+                                Minimum="1000" Maximum="6500" Value="6500"
                                 SmallChange="1" LargeChange="10"
                                 IsSnapToTickEnabled="True" TickFrequency="1"
                                 Grid.Column="1" Grid.Row="2"
                                 IsSelectionRangeEnabled="True" 
-                                SelectionStart="0" SelectionEnd="255"
-                                Width="300" HorizontalAlignment="Right">
+                                SelectionStart="1000" SelectionEnd="6500"
+                                Width="300" HorizontalAlignment="Right"
+                                ValueChanged="ColorFilterSliders_ValueChanged">
                             <Slider.Resources>
                                 <LinearGradientBrush x:Key="{x:Static SystemColors.HighlightBrushKey}">
                                     <GradientStop Color="White" Offset="1"/>
@@ -150,13 +154,14 @@
                                    FontSize="14"
                                    Margin="0,0,0,10"/>
                         <Slider x:Name="sldBrightness_blink" 
-                                Minimum="0" Maximum="128" Value="64"
+                                Minimum="0" Maximum="127" Value="100"
                                 SmallChange="1" LargeChange="10"
                                 IsSnapToTickEnabled="True" TickFrequency="1"
                                 Grid.Column="1" Grid.Row="1"
                                 IsSelectionRangeEnabled="True" 
-                                SelectionStart="0" SelectionEnd="255"
-                                Width="300" HorizontalAlignment="Right">
+                                SelectionStart="0" SelectionEnd="127"
+                                Width="300" HorizontalAlignment="Right"
+                                ValueChanged="BlinkSliders_ValueChanged">
                             <Slider.Resources>
                                 <LinearGradientBrush x:Key="{x:Static SystemColors.HighlightBrushKey}">
                                     <GradientStop Color="White" Offset="1"/>
@@ -170,13 +175,14 @@
                                    FontSize="14"
                                    Margin="0,0,0,10"/>
                         <Slider x:Name="sldTemperature_blink"
-                                Minimum="0" Maximum="128" Value="64"
+                                Minimum="1000" Maximum="6500" Value="6500"
                                 SmallChange="1" LargeChange="10"
                                 IsSnapToTickEnabled="True" TickFrequency="1"
                                 Grid.Column="1" Grid.Row="2"
                                 IsSelectionRangeEnabled="True" 
-                                SelectionStart="0" SelectionEnd="255"
-                                Width="300" HorizontalAlignment="Right">
+                                SelectionStart="1000" SelectionEnd="6500"
+                                Width="300" HorizontalAlignment="Right"
+                                ValueChanged="BlinkSliders_ValueChanged">
                             <Slider.Resources>
                                 <LinearGradientBrush x:Key="{x:Static SystemColors.HighlightBrushKey}">
                                     <GradientStop Color="White" Offset="1"/>
