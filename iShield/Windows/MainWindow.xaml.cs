@@ -32,7 +32,11 @@ namespace iShield
         bool isEnabled = true;
 
         DispatcherTimer colorFilterTimer = new DispatcherTimer();
+        DispatcherTimer eyeRestTimer = new DispatcherTimer();
+        DispatcherTimer breakTimeTimer = new DispatcherTimer();
+        DispatcherTimer hydrationTimer = new DispatcherTimer();
         DispatcherTimer blinkTimer = new DispatcherTimer();
+
         bool isBlinking = false;
 
         public MainWindow()
@@ -100,6 +104,18 @@ namespace iShield
             colorFilterTimer.Interval = TimeSpan.FromMilliseconds(50);
             colorFilterTimer.Start();
 
+            eyeRestTimer.Tick += eyeRestTimer_Tick;
+            eyeRestTimer.Interval = TimeSpan.FromSeconds(Settings.Default.Config.eye_rest_timer);
+            eyeRestTimer.Start();
+
+            breakTimeTimer.Tick += breakTimeTimer_Tick;
+            breakTimeTimer.Interval = TimeSpan.FromSeconds(Settings.Default.Config.break_time_timer);
+            breakTimeTimer.Start();
+
+            hydrationTimer.Tick += hydrationTimer_Tick;
+            hydrationTimer.Interval = TimeSpan.FromSeconds(Settings.Default.Config.hydration_timer);
+            hydrationTimer.Start();
+
             blinkTimer.Tick += blinkTimer_Tick;
             blinkTimer.Interval = TimeSpan.FromSeconds(Settings.Default.Config.blink_timer);
             blinkTimer.Start();
@@ -162,8 +178,8 @@ namespace iShield
 
         private void ResetTimers()
         {
-            blinkTimer.IsEnabled = false;
-            blinkTimer.IsEnabled = true;
+            eyeRestTimer.IsEnabled = breakTimeTimer.IsEnabled = hydrationTimer.IsEnabled = blinkTimer.IsEnabled = false;
+            eyeRestTimer.IsEnabled = breakTimeTimer.IsEnabled = hydrationTimer.IsEnabled = blinkTimer.IsEnabled = true;
         }
 
         private void colorFilterTimer_Tick(object sender, EventArgs e)
@@ -176,6 +192,7 @@ namespace iShield
             if (isBlinking)
                 isBlinking = false;
         }
+        
         private void blinkTimer_Tick(object sender, EventArgs e)
         {
             if (!finishedInitialization || !isEnabled || !Blink_Timer.IsActive) return;
@@ -190,6 +207,24 @@ namespace iShield
             isBlinking = true;
 
             colorFilterTimer.IsEnabled = true;
+        }
+
+        private void eyeRestTimer_Tick(object sender, EventArgs e)
+        {
+            if (!finishedInitialization || !isEnabled || !Eye_Rest_Timer.IsActive) return;
+            
+        }
+
+        private void breakTimeTimer_Tick(object sender, EventArgs e)
+        {
+            if (!finishedInitialization || !isEnabled || !Break_Time.IsActive) return;
+            
+        }
+
+        private void hydrationTimer_Tick(object sender, EventArgs e)
+        {
+            if (!finishedInitialization || !isEnabled || !Hydration_Timer.IsActive) return;
+            
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -237,6 +272,10 @@ namespace iShield
         private void Blink_Timer_ActivationChanged(object sender, EventArgs e)
         {
             Settings.Default.Config.blink_timer_enabled = Blink_Timer.IsActive;
+
+            // Reset the timer
+            blinkTimer.IsEnabled = false;
+            blinkTimer.IsEnabled = true;
         }
 
         private void Blink_Timer_TimeChanged(object sender, EventArgs e)
@@ -250,32 +289,56 @@ namespace iShield
 
         private void Hydration_Timer_ActivationChanged(object sender, EventArgs e)
         {
-            
+            Settings.Default.Config.hydration_timer_enabled = Hydration_Timer.IsActive;
+
+            // Reset the timer
+            hydrationTimer.IsEnabled = false;
+            hydrationTimer.IsEnabled = true;
         }
 
         private void Hydration_Timer_TimeChanged(object sender, EventArgs e)
         {
-
+            var time = Hydration_Timer.GetSeconds();
+            Settings.Default.Config.hydration_timer = time;
+            hydrationTimer.IsEnabled = false;
+            hydrationTimer.Interval = TimeSpan.FromSeconds(time);
+            hydrationTimer.IsEnabled = true;
         }
 
         private void Break_Time_ActivationChanged(object sender, EventArgs e)
         {
+            Settings.Default.Config.break_time_timer_enabled = Break_Time.IsActive;
 
+            // Reset the timer
+            breakTimeTimer.IsEnabled = false;
+            breakTimeTimer.IsEnabled = true;
         }
 
         private void Break_Time_TimeChanged(object sender, EventArgs e)
         {
-
+            var time = Break_Time.GetSeconds();
+            Settings.Default.Config.break_time_timer = time;
+            breakTimeTimer.IsEnabled = false;
+            breakTimeTimer.Interval = TimeSpan.FromSeconds(time);
+            breakTimeTimer.IsEnabled = true;
         }
 
         private void Eye_Rest_Timer_ActivationChanged(object sender, EventArgs e)
         {
+            Settings.Default.Config.eye_rest_timer_enabled = Eye_Rest_Timer.IsActive;
 
+            // Reset the timer
+            eyeRestTimer.IsEnabled = false;
+            eyeRestTimer.IsEnabled = true;
         }
 
         private void Eye_Rest_Timer_TimeChanged(object sender, EventArgs e)
         {
-
+            var time = Eye_Rest_Timer.GetSeconds();
+            Settings.Default.Config.eye_rest_timer = time;
+            eyeRestTimer.IsEnabled = false;
+            eyeRestTimer.Interval = TimeSpan.FromSeconds(time);
+            eyeRestTimer.IsEnabled = true;
         }
     }
 }
