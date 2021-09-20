@@ -85,7 +85,7 @@
                    FontSize="16"
                    Margin="0,10"
                    VerticalAlignment="Center"/>
-            <local:Toggle x:Name="ActivationToggle" Content="Toggle" IsChecked="False" 
+            <local:Toggle x:Name="ActivationToggle" Content="Toggle" IsChecked="{Binding IsActive, ElementName=Master}" 
                           Grid.Column="1" 
                           HorizontalAlignment="Right"
                           VerticalAlignment="Center"

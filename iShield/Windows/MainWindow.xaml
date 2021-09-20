@@ -29,8 +29,8 @@
                    MouseLeftButtonDown="imgIcon_MouseLeftButtonDown"/>
             <StackPanel>
                 <RadioButton x:Name="btnSettings" Margin="0,15,0,0" Padding="10" Width="35" Height="35"
-                              Style="{StaticResource FlatToggleButtonStyle}"
-                             IsChecked="True" Checked="ChangePage">
+                             Style="{StaticResource FlatToggleButtonStyle}"
+                             IsChecked="False" Checked="ChangePage">
                     <Image Source="/Assets/Icons/home.png" RenderOptions.BitmapScalingMode="Fant" />
                 </RadioButton>
                 <RadioButton x:Name="btnReminders" Margin="0,15,0,0" Padding="10" Width="35" Height="35"
@@ -72,7 +72,7 @@
                 <StackPanel x:Name="pnlSettings" 
                             Background="#FF22272B"
                             Height="400" 
-                            Orientation="Vertical" Visibility="Visible">
+                            Orientation="Vertical" Visibility="Hidden">
                     <Grid Margin="80,0">
                         <Grid.RowDefinitions>
                             <RowDefinition/>
@@ -201,6 +201,14 @@
                         <StackPanel>
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center"
                                         Margin="0,0,0,5">
+                                <local:Toggle  x:Name="chkInvertion" IsChecked="False" Checked="InvertionChanged" Unchecked="InvertionChanged"/>
+                                <TextBlock Text="Invert screen colors"
+                                      Foreground="#FFD9E5F0"
+                                      FontSize="14"
+                                      Margin="10,0,0,0"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center"
+                                        Margin="0,0,0,5">
                                 <local:Toggle  x:Name="chkMaxBrightness" IsChecked="True"/>
                                 <TextBlock Text="Always keep max brightness"
                                       Foreground="#FFD9E5F0"
@@ -240,10 +248,10 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
 
-                        <local:TimerInterface x:Name="Eye_Rest_Timer" Title="Eye-Rest Timer" Margin="10" Grid.Column="0" Grid.Row="0"/>
-                        <local:TimerInterface x:Name="Break_Time" Title="Break Time" Margin="10" Grid.Column="1" Grid.Row="0"/>
-                        <local:TimerInterface x:Name="Hydration_Timer" Title="Hydration Timer" Margin="10" Grid.Column="0" Grid.Row="1"/>
-                        <local:TimerInterface x:Name="Blink_Timer" Title="Blink Timer" Margin="10" Grid.Column="1" Grid.Row="1"/>
+                        <local:TimerInterface x:Name="Eye_Rest_Timer" Title="Eye-Rest Timer" Margin="10" Grid.Column="0" Grid.Row="0" ActivationChanged="Eye_Rest_Timer_ActivationChanged" TimeChanged="Eye_Rest_Timer_TimeChanged"/>
+                        <local:TimerInterface x:Name="Break_Time" Title="Break Time" Margin="10" Grid.Column="1" Grid.Row="0" ActivationChanged="Break_Time_ActivationChanged" TimeChanged="Break_Time_TimeChanged"/>
+                        <local:TimerInterface x:Name="Hydration_Timer" Title="Hydration Timer" Margin="10" Grid.Column="0" Grid.Row="1" ActivationChanged="Hydration_Timer_ActivationChanged" TimeChanged="Hydration_Timer_TimeChanged"/>
+                        <local:TimerInterface x:Name="Blink_Timer" Title="Blink Timer" Margin="10" Grid.Column="1" Grid.Row="1" ActivationChanged="Blink_Timer_ActivationChanged" TimeChanged="Blink_Timer_TimeChanged"/>
                     </Grid>
                 </StackPanel>
                 <StackPanel x:Name="pnlPresentation" Background="#FF22272B" Visibility="Hidden">

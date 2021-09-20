@@ -26,5 +26,16 @@ namespace iShield.Properties
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::iShield.Classes.iShieldConfig Config {
+            get {
+                return ((global::iShield.Classes.iShieldConfig)(this["Config"]));
+            }
+            set {
+                this["Config"] = value;
+            }
+        }
     }
 }

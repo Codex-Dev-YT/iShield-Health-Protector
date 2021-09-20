@@ -53,6 +53,9 @@ namespace iShield
 
                 m_seconds = s;
 
+                // No need to fire the event if the control was deactivated
+                if (!IsActive) return;
+
                 // Fire the "TimeChanged" event:
                 if (TimeChanged != null)
                     TimeChanged(this, EventArgs.Empty);
@@ -76,6 +79,9 @@ namespace iShield
                 if (m > MAX_MINUTES) m = MAX_MINUTES;
 
                 m_minutes = m;
+
+                // No need to fire the event if the control was deactivated
+                if (!IsActive) return;
 
                 // Fire the "TimeChanged" event:
                 if (TimeChanged != null)
@@ -121,6 +127,17 @@ namespace iShield
 
         public static readonly DependencyProperty TitleProperty =
             DependencyProperty.Register("Title", typeof(string), typeof(TimerInterface), new PropertyMetadata("Reminder Name"));
+
+
+        public bool IsActive
+        {
+            get { return (bool)GetValue(IsActiveProperty); }
+            set { SetValue(IsActiveProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for IsActive.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty IsActiveProperty =
+            DependencyProperty.Register("IsActive", typeof(bool), typeof(TimerInterface), new PropertyMetadata(false));
 
 
         // Other Methods =======================================

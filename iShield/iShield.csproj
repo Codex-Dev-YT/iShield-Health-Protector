@@ -99,6 +99,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\iShieldConfig.cs" />
     <Compile Include="Classes\Win32Methods.cs" />
     <Compile Include="Classes\ScreenManager.cs" />
     <Compile Include="User Controls\ContentSlider.xaml.cs">
