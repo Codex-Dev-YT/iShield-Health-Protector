@@ -91,6 +91,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\BreakTimePopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\EyeRestPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\HydrationPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -110,6 +122,15 @@
     </Compile>
     <Compile Include="Custom Controls\Toggle.cs" />
     <Compile Include="Utilities\DwmDropShadow.cs" />
+    <Compile Include="Windows\BreakTimePopup.xaml.cs">
+      <DependentUpon>BreakTimePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EyeRestPopup.xaml.cs">
+      <DependentUpon>EyeRestPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\HydrationPopup.xaml.cs">
+      <DependentUpon>HydrationPopup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

@@ -17,6 +17,7 @@ using System.Windows.Threading;
 using iShield.Classes;
 using iShield.Properties;
 using iShield.Utilities;
+using iShield.Windows;
 
 namespace iShield
 {
@@ -36,6 +37,10 @@ namespace iShield
         DispatcherTimer breakTimeTimer = new DispatcherTimer();
         DispatcherTimer hydrationTimer = new DispatcherTimer();
         DispatcherTimer blinkTimer = new DispatcherTimer();
+
+        Window eyeRestPopup = new EyeRestPopup();
+        Window breakTimePopup = new BreakTimePopup();
+        Window hydrationPopup = new HydrationPopup();
 
         bool isBlinking = false;
 
@@ -90,6 +95,7 @@ namespace iShield
         {
             RegisterPages();
             ApplySettings();
+            SetupPopups();
 
             finishedInitialization = true;
             LoadAppropriateStartPage();
@@ -119,6 +125,33 @@ namespace iShield
             blinkTimer.Tick += blinkTimer_Tick;
             blinkTimer.Interval = TimeSpan.FromSeconds(Settings.Default.Config.blink_timer);
             blinkTimer.Start();
+        }
+
+        private void SetupPopups()
+        {
+            // Instead of actually closing a popup window (this will prevent using them again),
+            // I just hide them and enable their corresponding timer:
+
+            eyeRestPopup.Closing += (object sender, System.ComponentModel.CancelEventArgs e) =>
+            {
+                eyeRestTimer.IsEnabled = true;
+                e.Cancel = true;
+                eyeRestPopup.Visibility = Visibility.Hidden;
+            };
+
+            breakTimePopup.Closing += (object sender, System.ComponentModel.CancelEventArgs e) =>
+            {
+                breakTimeTimer.IsEnabled = true;
+                e.Cancel = true;
+                breakTimePopup.Visibility = Visibility.Hidden;
+            };
+
+            hydrationPopup.Closing += (object sender, System.ComponentModel.CancelEventArgs e) => 
+            {
+                hydrationTimer.IsEnabled = true;
+                e.Cancel = true;
+                hydrationPopup.Visibility = Visibility.Hidden;
+            };
         }
 
         private void ContentSlider_FinishedSliding(object sender, EventArgs e)
@@ -174,6 +207,10 @@ namespace iShield
             ScreenManager.ApplyGamaRamp();
 
             if (isBlinking) isBlinking = false;
+
+            this.eyeRestPopup.Close();
+            this.breakTimePopup.Close();
+            this.hydrationPopup.Close();
         }
 
         private void ResetTimers()
@@ -213,18 +250,24 @@ namespace iShield
         {
             if (!finishedInitialization || !isEnabled || !Eye_Rest_Timer.IsActive) return;
             
+            eyeRestPopup.Show();
+            eyeRestTimer.IsEnabled = false;
         }
 
         private void breakTimeTimer_Tick(object sender, EventArgs e)
         {
             if (!finishedInitialization || !isEnabled || !Break_Time.IsActive) return;
             
+            breakTimePopup.Show();
+            breakTimeTimer.IsEnabled = false;
         }
 
         private void hydrationTimer_Tick(object sender, EventArgs e)
         {
             if (!finishedInitialization || !isEnabled || !Hydration_Timer.IsActive) return;
             
+            hydrationPopup.Show();
+            hydrationTimer.IsEnabled = false;
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -236,6 +279,9 @@ namespace iShield
             ScreenManager.RestoreDefaultGamaRampProfile();
             ScreenManager.ApplyGamaRamp();
             ScreenManager.Finalize();
+
+            // This will close all the windows/popups and make sure that the application closes:
+            System.Windows.Application.Current.Shutdown();
         }
 
         private void ApplySettings()
@@ -291,7 +337,10 @@ namespace iShield
         {
             Settings.Default.Config.hydration_timer_enabled = Hydration_Timer.IsActive;
 
-            // Reset the timer
+            // Reset the timer:
+
+            if (!hydrationTimer.IsEnabled) return;
+
             hydrationTimer.IsEnabled = false;
             hydrationTimer.IsEnabled = true;
         }
@@ -300,16 +349,20 @@ namespace iShield
         {
             var time = Hydration_Timer.GetSeconds();
             Settings.Default.Config.hydration_timer = time;
+            var temp = hydrationTimer.IsEnabled;
             hydrationTimer.IsEnabled = false;
             hydrationTimer.Interval = TimeSpan.FromSeconds(time);
-            hydrationTimer.IsEnabled = true;
+            hydrationTimer.IsEnabled = temp;
         }
 
         private void Break_Time_ActivationChanged(object sender, EventArgs e)
         {
             Settings.Default.Config.break_time_timer_enabled = Break_Time.IsActive;
 
-            // Reset the timer
+            // Reset the timer:
+
+            if (!breakTimeTimer.IsEnabled) return;
+
             breakTimeTimer.IsEnabled = false;
             breakTimeTimer.IsEnabled = true;
         }
@@ -318,16 +371,20 @@ namespace iShield
         {
             var time = Break_Time.GetSeconds();
             Settings.Default.Config.break_time_timer = time;
+            var temp = breakTimeTimer.IsEnabled;
             breakTimeTimer.IsEnabled = false;
             breakTimeTimer.Interval = TimeSpan.FromSeconds(time);
-            breakTimeTimer.IsEnabled = true;
+            breakTimeTimer.IsEnabled = temp;
         }
 
         private void Eye_Rest_Timer_ActivationChanged(object sender, EventArgs e)
         {
             Settings.Default.Config.eye_rest_timer_enabled = Eye_Rest_Timer.IsActive;
 
-            // Reset the timer
+            // Reset the timer:
+
+            if (!eyeRestTimer.IsEnabled) return;
+
             eyeRestTimer.IsEnabled = false;
             eyeRestTimer.IsEnabled = true;
         }
@@ -336,9 +393,10 @@ namespace iShield
         {
             var time = Eye_Rest_Timer.GetSeconds();
             Settings.Default.Config.eye_rest_timer = time;
+            var temp = eyeRestTimer.IsEnabled;
             eyeRestTimer.IsEnabled = false;
             eyeRestTimer.Interval = TimeSpan.FromSeconds(time);
-            eyeRestTimer.IsEnabled = true;
+            eyeRestTimer.IsEnabled = temp;
         }
     }
 }
