@@ -216,7 +216,7 @@
                                       Margin="10,0,0,0"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                <local:Toggle  x:Name="chkStartup" IsChecked="True"/>
+                                <local:Toggle  x:Name="chkStartup" IsChecked="True" Checked="chkStartup_CheckChanged" Unchecked="chkStartup_CheckChanged"/>
                                 <TextBlock Text="Run on startup"
                                       Foreground="#FFD9E5F0"
                                       FontSize="14"

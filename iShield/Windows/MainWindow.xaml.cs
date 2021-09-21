@@ -18,6 +18,7 @@ using iShield.Classes;
 using iShield.Properties;
 using iShield.Utilities;
 using iShield.Windows;
+using Microsoft.Win32;
 
 namespace iShield
 {
@@ -306,6 +307,10 @@ namespace iShield
             Hydration_Timer.IsActive = settings.hydration_timer_enabled;
             Blink_Timer.SetTime(settings.blink_timer);
             Blink_Timer.IsActive = settings.blink_timer_enabled;
+
+            if (settings.firstRun)
+                SetStartup((bool)chkStartup.IsChecked);
+
         }
 
         private void InvertionChanged(object sender, RoutedEventArgs e)
@@ -403,6 +408,27 @@ namespace iShield
         {
             Settings.Default.Config = new iShieldConfig();
             ApplySettings();
+        }
+
+        private void chkStartup_CheckChanged(object sender, RoutedEventArgs e)
+        {
+            bool startup = (bool)chkStartup.IsChecked;
+            Settings.Default.Config.runOnStartup = startup;
+            SetStartup(startup);
+        }
+
+        private void SetStartup(bool startup)
+        {
+            const string AppName = "iShield";
+
+            RegistryKey rk = Registry.CurrentUser.OpenSubKey
+                ("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+
+            if (startup)
+                rk.SetValue(AppName, System.Reflection.Assembly.GetExecutingAssembly().Location);
+            else
+                rk.DeleteValue(AppName, false);
+
         }
     }
 }
