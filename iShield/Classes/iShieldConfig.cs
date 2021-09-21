@@ -36,8 +36,8 @@ namespace iShield.Classes
 
         public iShieldConfig()
         {
-            brightness = 100;
-            temperature = 6500;
+            brightness = 50;
+            temperature = 3000;
             brightness_blink = 0;
             temperature_blink = 1000;
 

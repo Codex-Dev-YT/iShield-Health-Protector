@@ -32,6 +32,8 @@ namespace iShield
         bool finishedInitialization = false;
 
         bool isEnabled = true;
+        bool wasFirstRun = false;
+        bool pagesLoaded = false;
 
         DispatcherTimer colorFilterTimer = new DispatcherTimer();
         DispatcherTimer eyeRestTimer = new DispatcherTimer();
@@ -71,6 +73,12 @@ namespace iShield
         {
             if (!finishedInitialization) return;
 
+            if (wasFirstRun && pagesLoaded)
+            {
+                isEnabled = true;
+                wasFirstRun = false;
+            }
+
             if (currentPage != null)
                 contentPages[currentPage].Visibility = Visibility.Hidden;
 
@@ -98,8 +106,17 @@ namespace iShield
             ApplySettings();
             SetupPopups();
 
+            // If this is the first run, then the app must not be enabled until the user 
+            // finishes reading the presetation:
+            if (Settings.Default.Config.firstRun)
+            {
+                isEnabled = false;
+                wasFirstRun = true;
+            }
+
             finishedInitialization = true;
             LoadAppropriateStartPage();
+            pagesLoaded = true;
             DwmDropShadow.DropShadowToWindow(this);
             
             ScreenManager.Initialize();
