@@ -38,11 +38,11 @@ namespace iShield.Classes
         {
             brightness = 100;
             temperature = 6500;
-            brightness_blink = 100;
-            temperature_blink = 6500;
+            brightness_blink = 0;
+            temperature_blink = 1000;
 
             invertion = false;
-            alwaysKeepMaxBrightness = true;
+            alwaysKeepMaxBrightness = false;
             runOnStartup = true;
 
             eye_rest_timer_enabled = true;

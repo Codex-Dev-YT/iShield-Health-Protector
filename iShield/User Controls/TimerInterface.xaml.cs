@@ -17,9 +17,6 @@ using System.Windows.Shapes;
 
 namespace iShield
 {
-    /// <summary>
-    /// Interaction logic for TimerInterface.xaml
-    /// </summary>
     public partial class TimerInterface : UserControl
     {
         // Events ==============================================
@@ -27,13 +24,11 @@ namespace iShield
         public event EventHandler TimeChanged;
 
         // Constants ===========================================
-        const int MIN_SECONDS = 1;
-        const int MIN_MINUTES = 0;
         const int MAX_SECONDS = 59;
         const int MAX_MINUTES = 99;
 
         // Private Members =====================================
-        private int m_seconds = 1;
+        private int m_seconds = 5;
         private int m_minutes = 0;
 
         private string Seconds
@@ -41,51 +36,12 @@ namespace iShield
             get { 
                 return ((m_seconds < 10 ? "0" : "") + m_seconds.ToString()); 
             }
-            set
-            {
-                int s = 0;
-                int.TryParse(value, out s);
-
-                if (s == m_seconds) return;
-
-                if (s < MIN_SECONDS) s = MIN_SECONDS;
-                if (s > MAX_SECONDS) s = MAX_SECONDS;
-
-                m_seconds = s;
-
-                // No need to fire the event if the control was deactivated
-                if (!IsActive) return;
-
-                // Fire the "TimeChanged" event:
-                if (TimeChanged != null)
-                    TimeChanged(this, EventArgs.Empty);
-            }
         }
 
         private string Minutes
         {
-            get
-            {
+            get {
                 return ((m_minutes < 10 ? "0" : "") + m_minutes.ToString());
-            }
-            set
-            {
-                int m = 0;
-                int.TryParse(value, out m);
-
-                if (m == m_minutes) return;
-
-                if (m < MIN_MINUTES) m = MIN_MINUTES;
-                if (m > MAX_MINUTES) m = MAX_MINUTES;
-
-                m_minutes = m;
-
-                // No need to fire the event if the control was deactivated
-                if (!IsActive) return;
-
-                // Fire the "TimeChanged" event:
-                if (TimeChanged != null)
-                    TimeChanged(this, EventArgs.Empty);
             }
         }
 
@@ -93,9 +49,11 @@ namespace iShield
 
         public TimerInterface()
         {
-            Trace.Assert(MIN_SECONDS < MAX_SECONDS);
-            Trace.Assert(MIN_MINUTES < MAX_MINUTES);
             InitializeComponent();
+
+            sldTime.Minimum = 1;
+            sldTime.Maximum = MAX_MINUTES * 60 + MAX_SECONDS;
+            sldTime.Value = m_seconds = 5;
 
             txtSeconds.Text = Seconds;
             txtMinutes.Text = Minutes;
@@ -103,18 +61,16 @@ namespace iShield
 
         // Public Methods ======================================
 
-        // Convert time from minute-second format to number of seconds and return it:
-        public int GetSeconds()
-        {
-            return m_minutes * 60 + m_seconds;
-        }
+        public int GetSeconds() => (int)sldTime.Value;
 
-        // Convert number of seconds back to minute-second format, and update the display:
         public void SetTime(int seconds)
         {
-            m_minutes = (int)(seconds / 60);
-            m_seconds = seconds % 60;
-            txt_LostFocus(null, null);
+            if (seconds < 1) seconds = 1;
+
+            if (seconds > (MAX_MINUTES * 60 + MAX_SECONDS))
+                seconds = MAX_MINUTES * 60 + MAX_SECONDS;
+
+            sldTime.Value = seconds;
         }
 
         // Properties ==========================================
@@ -146,34 +102,29 @@ namespace iShield
         {
             // Convert bool? to bool:
             bool check = ActivationToggle.IsChecked ?? false;
-            ValuesPanel.IsEnabled = check;
+            pnlControls.IsEnabled = check;
 
             // Fire "ActivationChanged" event:
             if (ActivationChanged != null)
                 ActivationChanged(this, EventArgs.Empty);
         }
 
-        private void txt_TextChanged(object sender, TextChangedEventArgs e)
+        private void sldTime_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            Seconds = txtSeconds.Text;
-            Minutes = txtMinutes.Text;
-        }
+            if (!IsInitialized) return;
 
-        private void txt_PreviewKeyDown(object sender, KeyEventArgs e)
-        {
-            // Allow only numbers and backspace:
+            m_minutes = (int)(sldTime.Value / 60);
+            m_seconds = (int)(sldTime.Value % 60);
 
-            int key = (int)e.Key;
-
-            e.Handled = !(key >= 34 && key <= 43 ||
-                          key >= 74 && key <= 83 ||
-                          key == 2);
-        }
-
-        private void txt_LostFocus(object sender, RoutedEventArgs e)
-        {
             txtSeconds.Text = Seconds;
             txtMinutes.Text = Minutes;
+
+            // No need to fire the event if the control was deactivated
+            if (!IsActive) return;
+
+            // Fire the "TimeChanged" event:
+            if (TimeChanged != null)
+                TimeChanged(this, EventArgs.Empty);
         }
     }
 }

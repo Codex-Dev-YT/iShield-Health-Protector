@@ -92,35 +92,48 @@
                           Margin="0,1,0,0" Checked="ReminderActivationChanged" Unchecked="ReminderActivationChanged"/>
         </Grid>
 
-        <StackPanel x:Name="ValuesPanel" Orientation="Horizontal"
+        <StackPanel x:Name="pnlControls" Orientation="Vertical" IsEnabled="False">
+            <Slider x:Name="sldTime"
+                    Minimum="1" Maximum="5999" Value="10"
+                    SmallChange="1" LargeChange="1"
+                    IsSnapToTickEnabled="True" TickFrequency="1"
+                    IsSelectionRangeEnabled="True" 
+                    SelectionStart="1" SelectionEnd="5999"
+                    Margin="40,10,40,0"
+                    ValueChanged="sldTime_ValueChanged">
+                <Slider.Resources>
+                    <LinearGradientBrush x:Key="{x:Static SystemColors.HighlightBrushKey}">
+                        <GradientStop Color="#FFFC5453" Offset="1"/>
+                        <GradientStop Color="#FFFC5453" Offset="0"/>
+                    </LinearGradientBrush>
+                </Slider.Resources>
+            </Slider>
+            <StackPanel Orientation="Horizontal"
                     HorizontalAlignment="Center"
-                    Margin="0,40"
-                    IsEnabled="False">
-            <StackPanel Orientation="Vertical" Width="80">
-                <TextBox x:Name="txtMinutes" Text="" Style="{StaticResource tb}"
-                         PreviewKeyDown="txt_PreviewKeyDown"
-                         TextChanged="txt_TextChanged"
-                         LostFocus="txt_LostFocus"/>
-                <TextBlock Text="Minute"
+                    Margin="0,20">
+                <StackPanel Orientation="Vertical" Width="80">
+                    <TextBox x:Name="txtMinutes" Text="" 
+                             Style="{StaticResource tb}" 
+                             IsReadOnly="True"/>
+                    <TextBlock Text="Minute"
                            FontSize="12"
                            Foreground="#FF728797"/>
-            </StackPanel>
+                </StackPanel>
 
-            <TextBlock Text=":" 
+                <TextBlock Text=":" 
                        VerticalAlignment="Center"
                        Foreground="#ffffff"
                        FontSize="30"
                        Margin="10,-25,10,0"/>
-            <StackPanel Orientation="Vertical" Width="80">
-                <TextBox x:Name="txtSeconds" Text="" Style="{StaticResource tb}"
-                         PreviewKeyDown="txt_PreviewKeyDown"
-                         TextChanged="txt_TextChanged"
-                         LostFocus="txt_LostFocus"/>
-                <TextBlock Text="Second"
+                <StackPanel Orientation="Vertical" Width="80">
+                    <TextBox x:Name="txtSeconds" Text="" 
+                             Style="{StaticResource tb}"
+                             IsReadOnly="True"/>
+                    <TextBlock Text="Second"
                            FontSize="12"
                            Foreground="#FF728797"/>
+                </StackPanel>
             </StackPanel>
-
         </StackPanel>
     </StackPanel>
 </UserControl>

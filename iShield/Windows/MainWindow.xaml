@@ -227,7 +227,8 @@
                                 Style="{StaticResource FlatButtonStyle}" 
                                 Height="30" MaxWidth="200" Padding="10,0" 
                                 VerticalAlignment="Center" HorizontalAlignment="Right"
-                                Grid.Column="1">
+                                Grid.Column="1"
+                                Cursor="Hand" Click="RestoreDefaultSettings">
                             <TextBlock Text="Restore Default Settings" 
                                        Foreground="White" 
                                        TextAlignment="Center"

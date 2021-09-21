@@ -107,7 +107,7 @@ namespace iShield
             ScreenManager.AddGamaRampProfile("Blink", (int)sldBrightness_blink.Value, (int)sldTemperature_blink.Value, (bool)chkInvertion.IsChecked);
 
             colorFilterTimer.Tick += colorFilterTimer_Tick;
-            colorFilterTimer.Interval = TimeSpan.FromMilliseconds(50);
+            colorFilterTimer.Interval = TimeSpan.FromMilliseconds(30);
             colorFilterTimer.Start();
 
             eyeRestTimer.Tick += eyeRestTimer_Tick;
@@ -397,6 +397,12 @@ namespace iShield
             eyeRestTimer.IsEnabled = false;
             eyeRestTimer.Interval = TimeSpan.FromSeconds(time);
             eyeRestTimer.IsEnabled = temp;
+        }
+
+        private void RestoreDefaultSettings(object sender, RoutedEventArgs e)
+        {
+            Settings.Default.Config = new iShieldConfig();
+            ApplySettings();
         }
     }
 }
