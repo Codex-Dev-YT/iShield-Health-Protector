@@ -596,6 +596,16 @@
                             Width="50" Height="50"/>
                     </Border>
 
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0">
+                        <Image Source="../Assets/Presentation/invert.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="60" Height="60"/>
+                    </Border>
+
                 </StackPanel>
                 <StackPanel Width="550"
                     HorizontalAlignment="Center">
@@ -667,6 +677,16 @@
                         <Image Source="../Assets/Presentation/blink.png"
                             RenderOptions.BitmapScalingMode="Fant"
                             Width="50" Height="50"/>
+                    </Border>
+
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0">
+                        <Image Source="../Assets/Presentation/invert.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="60" Height="60"/>
                     </Border>
 
                 </StackPanel>
@@ -742,6 +762,16 @@
                             Width="50" Height="50"/>
                     </Border>
 
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0">
+                        <Image Source="../Assets/Presentation/invert.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="60" Height="60"/>
+                    </Border>
+
                 </StackPanel>
                 <StackPanel Width="550"
                     HorizontalAlignment="Center">
@@ -815,6 +845,16 @@
                             Width="50" Height="50"/>
                     </Border>
 
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0">
+                        <Image Source="../Assets/Presentation/invert.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="60" Height="60"/>
+                    </Border>
+
                 </StackPanel>
                 <StackPanel Width="550"
                     HorizontalAlignment="Center">
@@ -838,6 +878,89 @@
             </StackPanel>
         </StackPanel>
         <StackPanel x:Name="Slide13"
+            Background="#FF22272B" Visibility="Hidden">
+            <StackPanel Margin="20,0">
+                <TextBlock Text="Additional Features!" 
+                    FontSize="40"
+                    FontWeight="Bold"
+                    Foreground="{DynamicResource DefaultBrush}"
+                    HorizontalAlignment="Center" FontFamily="{DynamicResource NotoSerifTC}"/>
+                <TextBlock Text="Your eyes are not the only things affected by the long use of computers, there's more! but again, iShield has got your back!"
+                    Foreground="#FF4C565F"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    HorizontalAlignment="Center" 
+                    FontFamily="{DynamicResource NotoSerifTC}"
+                    Margin="0,5,0,10"
+                    TextWrapping="Wrap"
+                    TextAlignment="Center"
+                    Width="500"/>
+                <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="0,20,0,0">
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0">
+                        <Image Source="/iShield;component/Assets/Presentation/break-time.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="60" Height="60"/>
+                    </Border>
+
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0">
+                        <Image Source="/iShield;component/Assets/Presentation/water-bottle.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="60" Height="60"/>
+                    </Border>
+
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0">
+                        <Image Source="/iShield;component/Assets/Presentation/blink.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="50" Height="50"/>
+                    </Border>
+
+                    <Border Height="100" Width="100" 
+                        BorderBrush="{DynamicResource DefaultBrush}" 
+                        BorderThickness="5"
+                        CornerRadius="10"
+                        Margin="20,0" Background="{DynamicResource BackgroundBrush}">
+                        <Image Source="/iShield;component/Assets/Presentation/invert.png"
+                            RenderOptions.BitmapScalingMode="Fant"
+                            Width="60" Height="60"/>
+                    </Border>
+
+                </StackPanel>
+                <StackPanel Width="550"
+                    HorizontalAlignment="Center">
+                    <TextBlock Text="Invert Screen Colors" 
+                        FontSize="16"
+                        FontWeight="Bold"
+                        Foreground="{DynamicResource DefaultBrush}"
+                        FontFamily="{DynamicResource NotoSerifTC}"
+                        Margin="0,20,0,7"/>
+                    <TextBlock Text="This feature can be super useful, especially in cases of reading books, documents, blogs, or any form of textual content with white/bright background and black/dark text. This feature will invert those colors in a way that makes them easier on your eyes."
+                        Foreground="#FF4C565F"
+                        FontSize="14"
+                        FontWeight="Bold"
+                        FontFamily="{DynamicResource NotoSerifTC}"
+                        TextWrapping="Wrap"
+                        LineStackingStrategy="BlockLineHeight" 
+                        LineHeight="19"
+                        TextAlignment="Justify"/>
+
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel x:Name="Slide14"
             Background="#FF22272B" Visibility="Hidden">
             <StackPanel Margin="20,0">
                 <TextBlock Text="Notes" 

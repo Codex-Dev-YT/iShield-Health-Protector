@@ -198,15 +198,6 @@
     <Resource Include="Assets\Presentation\sun.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\Presentation\brightness2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Assets\Presentation\sun-glasses2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Assets\Presentation\sandclock2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Assets\Presentation\blink.png" />
     <Resource Include="Assets\Presentation\water-bottle.png" />
     <Resource Include="Assets\Presentation\break-time.png" />
@@ -227,6 +218,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\UI\minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Presentation\invert.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
