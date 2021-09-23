@@ -1,0 +1,46 @@
+﻿<Window x:Class="iShield.Windows.BreakTimePopup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:iShield.Windows"
+        mc:Ignorable="d"
+        Title="BreakTimePopup" Height="330" Width="420"
+        WindowStyle="None" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Topmost="True"
+        Background="#22272b"
+        AllowsTransparency="False" 
+        Loaded="Window_Loaded">
+    <Grid>
+        <StackPanel Orientation="Vertical"
+                    HorizontalAlignment="Center" VerticalAlignment="Top"
+                    Margin="20">
+            <TextBlock Text="Break Time!" 
+                       FontSize="25" 
+                       Foreground="{StaticResource CheckedBrush}"
+                       HorizontalAlignment="Center"
+                       FontWeight="Bold"/>
+            <Image Source="/Assets/Presentation/break-time.png" RenderOptions.BitmapScalingMode="Fant"
+                   Width="60" Height="60"
+                   Margin="0,30,0,20"/>
+            <TextBlock Text="You've been sitting at your computer for a while now! We recommend that you take a break of at least 15 minutes to refresh your mind, rest your eyes, and exercise. Your health is important, take care of it!"
+                    Foreground="#FF4C565F"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    HorizontalAlignment="Center" 
+                    FontFamily="{DynamicResource NotoSerifTC}"
+                    Margin="0,5,0,10"
+                    TextWrapping="Wrap"
+                    TextAlignment="Justify"/>
+            <Button Content="Done" 
+                    Width="100" Padding="5" Margin="0,15,0,0" 
+                    Style="{StaticResource FlatButtonStyle}"
+                    FontSize="16" 
+                    TextBlock.TextAlignment="Center"
+                    Foreground="White"
+                    Cursor="Hand"
+                    Click="Button_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

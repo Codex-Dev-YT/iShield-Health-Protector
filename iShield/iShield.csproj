@@ -95,15 +95,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\BreakTimePopup.xaml">
+    <Page Include="Windows\Popups\BreakTimePopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\EyeRestPopup.xaml">
+    <Page Include="Windows\Popups\EyeRestPopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\HydrationPopup.xaml">
+    <Page Include="Windows\Popups\HydrationPopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -127,13 +127,13 @@
     </Compile>
     <Compile Include="Custom Controls\Toggle.cs" />
     <Compile Include="Utilities\DwmDropShadow.cs" />
-    <Compile Include="Windows\BreakTimePopup.xaml.cs">
+    <Compile Include="Windows\Popups\BreakTimePopup.xaml.cs">
       <DependentUpon>BreakTimePopup.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\EyeRestPopup.xaml.cs">
+    <Compile Include="Windows\Popups\EyeRestPopup.xaml.cs">
       <DependentUpon>EyeRestPopup.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\HydrationPopup.xaml.cs">
+    <Compile Include="Windows\Popups\HydrationPopup.xaml.cs">
       <DependentUpon>HydrationPopup.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\MainWindow.xaml.cs">
@@ -227,5 +227,6 @@
   <ItemGroup>
     <Resource Include="Assets\Presentation\invert.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
