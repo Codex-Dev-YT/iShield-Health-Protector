@@ -209,7 +209,9 @@
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center"
                                         Margin="0,0,0,5">
-                                <local:Toggle  x:Name="chkMaxBrightness" IsChecked="True"/>
+                                <local:Toggle  x:Name="chkMaxBrightness" IsChecked="True" 
+                                               Checked="chkMaxBrightness_CheckedChanged" 
+                                               Unchecked="chkMaxBrightness_CheckedChanged"/>
                                 <TextBlock Text="Always keep max brightness"
                                       Foreground="#FFD9E5F0"
                                       FontSize="14"

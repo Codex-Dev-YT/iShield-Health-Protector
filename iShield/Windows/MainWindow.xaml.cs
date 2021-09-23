@@ -47,6 +47,8 @@ namespace iShield
 
         bool isBlinking = false;
 
+        int originalScreenBrightness = 0;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -226,6 +228,9 @@ namespace iShield
 
             if (isBlinking) isBlinking = false;
 
+            if (Settings.Default.Config.alwaysKeepMaxBrightness)
+                WindowsSettingsBrightnessController.Set(isEnabled ? 100 : originalScreenBrightness);
+
             this.eyeRestPopup.Close();
             this.breakTimePopup.Close();
             this.hydrationPopup.Close();
@@ -298,6 +303,11 @@ namespace iShield
             ScreenManager.ApplyGamaRamp();
             ScreenManager.Finalize();
 
+            if (Settings.Default.Config.alwaysKeepMaxBrightness)
+            {
+                WindowsSettingsBrightnessController.Set(originalScreenBrightness);
+            }
+
             // This will close all the windows/popups and make sure that the application closes:
             System.Windows.Application.Current.Shutdown();
         }
@@ -324,6 +334,12 @@ namespace iShield
             Hydration_Timer.IsActive = settings.hydration_timer_enabled;
             Blink_Timer.SetTime(settings.blink_timer);
             Blink_Timer.IsActive = settings.blink_timer_enabled;
+
+            if (settings.alwaysKeepMaxBrightness)
+            {
+                originalScreenBrightness = WindowsSettingsBrightnessController.Get();
+                WindowsSettingsBrightnessController.Set(100);
+            }
 
             if (settings.firstRun)
                 SetStartup((bool)chkStartup.IsChecked);
@@ -446,6 +462,22 @@ namespace iShield
             else
                 rk.DeleteValue(AppName, false);
 
+        }
+
+        private void chkMaxBrightness_CheckedChanged(object sender, RoutedEventArgs e)
+        {
+            if (!finishedInitialization) return;
+
+            bool check = (bool)chkMaxBrightness.IsChecked;
+
+            Settings.Default.Config.alwaysKeepMaxBrightness = check;
+
+            if (check) {
+                originalScreenBrightness = WindowsSettingsBrightnessController.Get();
+                WindowsSettingsBrightnessController.Set(100);
+            } else {
+                WindowsSettingsBrightnessController.Set(originalScreenBrightness);
+            }
         }
     }
 }

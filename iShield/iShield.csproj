@@ -56,10 +56,14 @@
   <PropertyGroup>
     <ApplicationIcon>iShield Icon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -114,6 +118,7 @@
     <Compile Include="Classes\iShieldConfig.cs" />
     <Compile Include="Classes\Win32Methods.cs" />
     <Compile Include="Classes\ScreenManager.cs" />
+    <Compile Include="Classes\WindowsSettingsBrightnessController.cs" />
     <Compile Include="User Controls\ContentSlider.xaml.cs">
       <DependentUpon>ContentSlider.xaml</DependentUpon>
     </Compile>
