@@ -52,7 +52,7 @@ namespace iShield.Classes
 
             eye_rest_timer = 1200;
             break_time_timer = 2400;
-            hydration_timer = 3600;
+            hydration_timer = 1800;
             blink_timer = 3;
 
             firstRun = true;
