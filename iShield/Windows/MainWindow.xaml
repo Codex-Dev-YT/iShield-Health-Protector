@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:iShield"
         x:Class="iShield.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="iShield Health Protector" Height="450" Width="800"
         WindowStyle="None"
         ResizeMode="NoResize"
         Background="#22272b"
@@ -322,7 +322,7 @@
                                Foreground="#FF96A5B2"
                                FontSize="14"
                                Grid.Column="0" Grid.Row="0"/>
-                        <TextBlock Text="1.0.0"
+                        <TextBlock x:Name="txtVersion" Text="0.0.0.0"
                                Margin="20,0,20,5"
                                Foreground="#FF96A5B2"
                                FontSize="14"

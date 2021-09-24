@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -115,6 +116,8 @@ namespace iShield
                 isEnabled = false;
                 wasFirstRun = true;
             }
+
+            txtVersion.Text = Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
             finishedInitialization = true;
             LoadAppropriateStartPage();
