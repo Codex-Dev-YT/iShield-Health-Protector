@@ -9,6 +9,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using Forms = System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -20,6 +21,7 @@ using iShield.Properties;
 using iShield.Utilities;
 using iShield.Windows;
 using Microsoft.Win32;
+using System.IO;
 
 namespace iShield
 {
@@ -50,9 +52,41 @@ namespace iShield
 
         int originalScreenBrightness = 0;
 
+        Forms.NotifyIcon notifyIcon;
+
         public MainWindow()
         {
             InitializeComponent();
+            Stream iconStream = Application.GetResourceStream(new Uri("pack://application:,,,/../Assets/Icons/iShield Icon.ico")).Stream;
+            notifyIcon = new Forms.NotifyIcon();
+            notifyIcon.Icon = new System.Drawing.Icon(iconStream);
+            notifyIcon.Text = "iShield Health Protector";
+            notifyIcon.ContextMenuStrip = new Forms.ContextMenuStrip();
+            
+            notifyIcon.ContextMenuStrip.Items.Add("Hide iShield Health Protector", null, (object sender, EventArgs e) =>
+            {
+                Forms.ToolStripItem item = (Forms.ToolStripItem)sender;
+
+                if (this.Visibility == Visibility.Visible)
+                {
+                    this.Hide();
+                    item.Text = "Show";
+                } else {
+                    this.Show();
+                    item.Text = "Hide";
+                }
+
+                item.Text += " iShield Health Protector";
+            });
+
+            notifyIcon.ContextMenuStrip.Items.Add("Disable Protection", null, (object sender, EventArgs e) => {
+                imgIcon_MouseLeftButtonDown(null, null);
+            });
+
+            notifyIcon.ContextMenuStrip.Items.Add(new Forms.ToolStripSeparator());
+            notifyIcon.ContextMenuStrip.Items.Add("Exit", null, (object sender, EventArgs e) => this.Close());
+
+            notifyIcon.Visible = true;
         }
 
         private void RegisterPages()
@@ -190,10 +224,12 @@ namespace iShield
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            this.Hide();
+            notifyIcon.ContextMenuStrip.Items[0].Text = "Show iShield Health Protector";
+            notifyIcon.ShowBalloonTip(3000, "iShield Health Protector", "iShield Health Protector was minimized to system try.", Forms.ToolTipIcon.Info);
         }
 
-        private void btnMinimize_Click(object sender, RoutedEventArgs e) 
+        private void btnMinimize_Click(object sender, RoutedEventArgs e)
             => this.WindowState = WindowState.Minimized;
 
         private void ColorFilterSliders_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -237,6 +273,8 @@ namespace iShield
             this.eyeRestPopup.Close();
             this.breakTimePopup.Close();
             this.hydrationPopup.Close();
+
+            notifyIcon.ContextMenuStrip.Items[1].Text = (isEnabled ? "Disable" : "Enable") + " Protection";
         }
 
         private void ResetTimers()
@@ -301,6 +339,8 @@ namespace iShield
             // This will prevent the timers from working at all, this way, they will not 
             // change the gamma ramp of the screen again after reseting it:
             finishedInitialization = false;
+
+            notifyIcon.Dispose();
 
             ScreenManager.RestoreDefaultGamaRampProfile();
             ScreenManager.ApplyGamaRamp();
