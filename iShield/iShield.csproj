@@ -99,6 +99,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\Popups\ExitPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\Popups\EyeRestPopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -129,6 +133,9 @@
     <Compile Include="Utilities\DwmDropShadow.cs" />
     <Compile Include="Windows\Popups\BreakTimePopup.xaml.cs">
       <DependentUpon>BreakTimePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Popups\ExitPopup.xaml.cs">
+      <DependentUpon>ExitPopup.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Popups\EyeRestPopup.xaml.cs">
       <DependentUpon>EyeRestPopup.xaml</DependentUpon>
@@ -238,6 +245,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Icons\Eye-Rest Popup\20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Icons\Exit Popup\information.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

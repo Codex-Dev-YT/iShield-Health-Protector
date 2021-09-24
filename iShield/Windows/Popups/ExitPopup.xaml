@@ -1,0 +1,57 @@
+﻿<Window x:Class="iShield.Windows.Popups.ExitPopup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:iShield.Windows.Popups"
+        mc:Ignorable="d"
+        Title="ExitPopup" Height="155" Width="450"
+        Topmost="True"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="#22272b"
+        AllowsTransparency="False"
+        Loaded="Window_Loaded">
+    <Grid>
+        <StackPanel Orientation="Vertical"
+                HorizontalAlignment="Center" VerticalAlignment="Top" Width="450" Height="155">
+            <StackPanel Orientation="Horizontal" Margin="20,30">
+                <Image Source="../../Assets/Icons/Exit Popup/information.png"
+                       RenderOptions.BitmapScalingMode="Fant"
+                       Width="50" Height="50"/>
+                <TextBlock Text="Are you sure you want to exit iShield Health Protector? You will be unprotected!"
+                   Foreground="#FF4C565F"
+                   FontSize="14"
+                   FontWeight="Bold"
+                   FontFamily="{DynamicResource NotoSerifTC}"
+                   TextWrapping="Wrap"
+                   TextAlignment="Justify"
+                   Margin="20,3,0,0"
+                   Width="340"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,20,20">
+                <Button x:Name="btnYes"
+                        Content="Exit" 
+                        Width="100" Padding="5" Margin="0,0,20,0"
+                        Style="{StaticResource FlatButtonStyle}"
+                        FontSize="16" 
+                        TextBlock.TextAlignment="Center"
+                        VerticalAlignment="Center"
+                        Foreground="White"
+                        Cursor="Hand"
+                        Click="CloseDialog"/>
+                <Button x:Name="btnNo"
+                        Content="Stay Protected" 
+                        Width="130" Padding="5" 
+                        Style="{StaticResource FlatButtonStyle}"
+                        FontSize="16" 
+                        TextBlock.TextAlignment="Center"
+                        VerticalAlignment="Center"
+                        Foreground="White"
+                        Cursor="Hand"
+                        Click="CloseDialog"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

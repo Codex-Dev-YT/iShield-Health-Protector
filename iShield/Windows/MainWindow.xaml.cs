@@ -22,6 +22,7 @@ using iShield.Utilities;
 using iShield.Windows;
 using Microsoft.Win32;
 using System.IO;
+using iShield.Windows.Popups;
 
 namespace iShield
 {
@@ -65,6 +66,8 @@ namespace iShield
             
             notifyIcon.ContextMenuStrip.Items.Add("Hide iShield Health Protector", null, (object sender, EventArgs e) =>
             {
+                if (!finishedInitialization) return;
+
                 Forms.ToolStripItem item = (Forms.ToolStripItem)sender;
 
                 if (this.Visibility == Visibility.Visible)
@@ -80,11 +83,16 @@ namespace iShield
             });
 
             notifyIcon.ContextMenuStrip.Items.Add("Disable Protection", null, (object sender, EventArgs e) => {
+                if (!finishedInitialization) return;
                 imgIcon_MouseLeftButtonDown(null, null);
             });
 
             notifyIcon.ContextMenuStrip.Items.Add(new Forms.ToolStripSeparator());
-            notifyIcon.ContextMenuStrip.Items.Add("Exit", null, (object sender, EventArgs e) => this.Close());
+            notifyIcon.ContextMenuStrip.Items.Add("Exit", null, (object sender, EventArgs e) =>
+            {
+                if (!finishedInitialization) return;
+                this.Close();
+            });
 
             notifyIcon.Visible = true;
         }
@@ -336,6 +344,29 @@ namespace iShield
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            // Disable all try icon context menu items so that the user doesn't mess with them while 
+            // the exit dialog is shown. Otherwise, some conflicts may occur, resulting in crashes.
+            foreach (Forms.ToolStripItem item in notifyIcon.ContextMenuStrip.Items)
+                item.Enabled = false;
+
+            new ExitPopup().ShowDialog();
+
+            if (!ExitPopup.m_exit)
+            {
+                // Set finishedInitialization to false so that the menu items' events don't fire while 
+                // re-enabling them:
+                finishedInitialization = false;
+
+                // Re-enable the context menu items since the user chose not to exit the program.
+                foreach (Forms.ToolStripItem item in notifyIcon.ContextMenuStrip.Items)
+                    item.Enabled = true;
+
+                finishedInitialization = true;
+
+                e.Cancel = true;
+                return;
+            }
+
             // This will prevent the timers from working at all, this way, they will not 
             // change the gamma ramp of the screen again after reseting it:
             finishedInitialization = false;
