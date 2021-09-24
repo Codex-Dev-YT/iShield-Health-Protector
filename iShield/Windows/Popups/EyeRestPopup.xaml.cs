@@ -1,4 +1,5 @@
-﻿using System;
+﻿using iShield.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,6 +28,11 @@ namespace iShield.Windows
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            DwmDropShadow.DropShadowToWindow(this);
         }
     }
 }

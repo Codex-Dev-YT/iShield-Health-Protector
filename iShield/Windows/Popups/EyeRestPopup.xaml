@@ -5,15 +5,195 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:iShield.Windows"
         mc:Ignorable="d"
-        Title="EyeRestPopup" Height="200" Width="400"
+        Title="EyeRestPopup" Height="475" Width="540"
         WindowStyle="None" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
-        Topmost="True">
+        Topmost="True"
+        Background="#22272b"
+        AllowsTransparency="False" 
+        Loaded="Window_Loaded">
     <Grid>
         <StackPanel Orientation="Vertical"
-                    HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Rest Your eyes!" FontSize="25"/>
-            <Button Content="Ok" Width="100" Padding="5" Margin="0,10,0,0" FontSize="16" Click="Button_Click"/>
+                    HorizontalAlignment="Center" VerticalAlignment="Top"
+                    Margin="20">
+            <TextBlock Text="Rest Your Eyes!" 
+                       FontSize="25" 
+                       Foreground="{StaticResource CheckedBrush}"
+                       HorizontalAlignment="Center"
+                       FontWeight="Bold"
+                       Margin="0,0,0,10"/>
+            <TextBlock Text="Time to rest your eyes and look off the screen! Here are some exercises (Do each one of them 5 times at least, except for the last one). Move your eyes:"
+                       Foreground="#FF4C565F"
+                       FontSize="13"
+                       FontFamily="{DynamicResource NotoSerifTC}"
+                       TextAlignment="Justify"
+                       TextWrapping="Wrap"
+                       Margin="0,0,0,10"/>
+            <StackPanel Orientation="Horizontal" Margin="0,5">
+                <Border Padding="10" Margin="0,0,10,0" Width="240"
+                        Background="{StaticResource HighlightBrush}">
+                    <StackPanel Orientation="Horizontal">
+                        <Border Background="#26FC5453"
+                            Width="40" Height="40">
+                            <Image Source="/Assets/icons/Eye-Rest Popup/horizontal.png" 
+                               RenderOptions.BitmapScalingMode="Fant"
+                               Margin="7"/>
+                        </Border>
+                        <TextBlock Text="Horizontally: left and right."
+                               Foreground="#FF4C565F"
+                               FontSize="14"
+                               FontWeight="Bold"
+                               FontFamily="{DynamicResource NotoSerifTC}"
+                               TextWrapping="Wrap"
+                               TextAlignment="Left"
+                               Margin="10,0,0,0"
+                               Width="160" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+                <Border Padding="10" Width="240"
+                        Background="{StaticResource HighlightBrush}">
+                    <StackPanel Orientation="Horizontal">
+                        <Border Background="#26FC5453"
+                            Width="40" Height="40">
+                            <Image RenderOptions.BitmapScalingMode="Fant"
+                               Margin="7">
+                                <Image.Source>
+                                    <BitmapImage UriSource="/Assets/icons/Eye-Rest Popup/horizontal.png" Rotation="Rotate90"/>
+                                </Image.Source>
+                            </Image>
+                        </Border>
+                        <TextBlock Text="Vertically: up and down."
+                               Foreground="#FF4C565F"
+                               FontSize="14"
+                               FontWeight="Bold"
+                               FontFamily="{DynamicResource NotoSerifTC}"
+                               TextWrapping="Wrap"
+                               TextAlignment="Left"
+                               Margin="10,0,0,0"
+                               Width="160" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5">
+                <Border Padding="10" Margin="0,0,10,0" Width="240"
+                        Background="{StaticResource HighlightBrush}">
+                    <StackPanel Orientation="Horizontal">
+                        <Border Background="#26FC5453"
+                            Width="40" Height="40">
+                            <Image RenderOptions.BitmapScalingMode="Fant"
+                                   Margin="7">
+                                <Image.Source>
+                                    <BitmapImage UriSource="/Assets/icons/Eye-Rest Popup/diagonal.png" Rotation="Rotate90"/>
+                                </Image.Source>
+                            </Image>
+                        </Border>
+                        <TextBlock Text="Diagonally: top-left and bottom-right."
+                               Foreground="#FF4C565F"
+                               FontSize="14"
+                               FontWeight="Bold"
+                               FontFamily="{DynamicResource NotoSerifTC}"
+                               TextWrapping="Wrap"
+                               TextAlignment="Left"
+                               Margin="10,0,0,0"
+                               Width="160" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+                <Border Padding="10" Width="240"
+                        Background="{StaticResource HighlightBrush}">
+                    <StackPanel Orientation="Horizontal">
+                        <Border Background="#26FC5453"
+                            Width="40" Height="40">
+                            <Image Source="/Assets/icons/Eye-Rest Popup/diagonal.png"
+                                   RenderOptions.BitmapScalingMode="Fant"
+                                   Margin="7"/>
+                        </Border>
+                        <TextBlock Text="Diagonally: top-right and bottom-left."
+                               Foreground="#FF4C565F"
+                               FontSize="14"
+                               FontWeight="Bold"
+                               FontFamily="{DynamicResource NotoSerifTC}"
+                               TextWrapping="Wrap"
+                               TextAlignment="Left"
+                               Margin="10,0,0,0"
+                               Width="160" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5">
+                <Border Padding="10" Margin="0,0,10,0" Width="240"
+                        Background="{StaticResource HighlightBrush}">
+                    <StackPanel Orientation="Horizontal">
+                        <Border Background="#26FC5453"
+                            Width="40" Height="40">
+                            <Image Source="/Assets/icons/Eye-Rest Popup/rotate.png" 
+                               RenderOptions.BitmapScalingMode="Fant"
+                               Margin="7"
+                                   RenderTransformOrigin="0.5,0.5">
+                                <Image.RenderTransform>
+                                    <ScaleTransform ScaleY="-1"/>
+                                </Image.RenderTransform>
+                            </Image>
+                        </Border>
+                        <TextBlock Text="Rotate: Clockwise Direction."
+                               Foreground="#FF4C565F"
+                               FontSize="14"
+                               FontWeight="Bold"
+                               FontFamily="{DynamicResource NotoSerifTC}"
+                               TextWrapping="Wrap"
+                               TextAlignment="Left"
+                               Margin="10,0,0,0"
+                               Width="160" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+                <Border Padding="10" Width="240"
+                        Background="{StaticResource HighlightBrush}">
+                    <StackPanel Orientation="Horizontal">
+                        <Border Background="#26FC5453"
+                            Width="40" Height="40">
+                            <Image Source="/Assets/icons/Eye-Rest Popup/rotate.png" 
+                               RenderOptions.BitmapScalingMode="Fant"
+                               Margin="7"/>
+                        </Border>
+                        <TextBlock Text="Rotate: Counter-Clockwise Direction."
+                               Foreground="#FF4C565F"
+                               FontSize="14"
+                               FontWeight="Bold"
+                               FontFamily="{DynamicResource NotoSerifTC}"
+                               TextWrapping="Wrap"
+                               TextAlignment="Left"
+                               Margin="10,0,0,0"
+                               Width="160" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+            <Border Padding="10" Margin="0,5" Width="490"
+                        Background="{StaticResource HighlightBrush}">
+                <StackPanel Orientation="Horizontal">
+                    <Border Background="#26FC5453"
+                            Width="40" Height="40">
+                        <Image Source="/Assets/icons/Eye-Rest Popup/20.png" 
+                               RenderOptions.BitmapScalingMode="Fant"
+                               Margin="7"/>
+                    </Border>
+                    <TextBlock Text="The 20-20-20 rule: Every 20 minutes, look at an object 20 feet away, for at least 20 seconds."
+                               Foreground="#FF4C565F"
+                               FontSize="14"
+                               FontWeight="Bold"
+                               FontFamily="{DynamicResource NotoSerifTC}"
+                               TextWrapping="Wrap"
+                               TextAlignment="Left"
+                               Margin="10,0,0,0"
+                               Width="410" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+            <Button Content="Done" 
+                    Width="100" Padding="5" Margin="0,25,0,0" 
+                    Style="{StaticResource FlatButtonStyle}"
+                    FontSize="16" 
+                    TextBlock.TextAlignment="Center"
+                    Foreground="White"
+                    Cursor="Hand"
+                    Click="Button_Click"/>
         </StackPanel>
     </Grid>
 </Window>
