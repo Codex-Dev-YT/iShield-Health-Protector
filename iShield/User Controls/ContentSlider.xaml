@@ -903,7 +903,7 @@
                         BorderThickness="5"
                         CornerRadius="10"
                         Margin="20,0">
-                        <Image Source="/iShield;component/Assets/Presentation/break-time.png"
+                        <Image Source="../Assets/Presentation/break-time.png"
                             RenderOptions.BitmapScalingMode="Fant"
                             Width="60" Height="60"/>
                     </Border>
@@ -913,7 +913,7 @@
                         BorderThickness="5"
                         CornerRadius="10"
                         Margin="20,0">
-                        <Image Source="/iShield;component/Assets/Presentation/water-bottle.png"
+                        <Image Source="../Assets/Presentation/water-bottle.png"
                             RenderOptions.BitmapScalingMode="Fant"
                             Width="60" Height="60"/>
                     </Border>
@@ -923,7 +923,7 @@
                         BorderThickness="5"
                         CornerRadius="10"
                         Margin="20,0">
-                        <Image Source="/iShield;component/Assets/Presentation/blink.png"
+                        <Image Source="../Assets/Presentation/blink.png"
                             RenderOptions.BitmapScalingMode="Fant"
                             Width="50" Height="50"/>
                     </Border>
@@ -933,7 +933,7 @@
                         BorderThickness="5"
                         CornerRadius="10"
                         Margin="20,0" Background="{DynamicResource BackgroundBrush}">
-                        <Image Source="/iShield;component/Assets/Presentation/invert.png"
+                        <Image Source="../Assets/Presentation/invert.png"
                             RenderOptions.BitmapScalingMode="Fant"
                             Width="60" Height="60"/>
                     </Border>
